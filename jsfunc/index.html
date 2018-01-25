@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JavaScript Functions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="jsfunc.css" />
+    <script src="jsfunc.js"></script>
+</head>
+<body>
+    <h1>This page will demostrate the following features in JavaScript</h1>
+    <ul>
+        <li>Variables</li>
+        <li>Functions</li>
+        <li>Parameters</li>
+        <li>Conditional Statements</li>
+        <li>Loops</li>
+        <li>Arrays</li>
+        <li>Associative Arrays</li>
+    </ul>
+    <div id="varDiv"><h2>Variables</h2>
+        <p>
+            Like many other programing languages, variables are a storage container that has a <strong>unique</strong> name.
+            variables are declared using either the keyword <code>var</code> or <code>let</code>.
+            <a href="https://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var-to-declare-a-variable">
+            This article</a> from StackOverflow details when you would use <code>var</code> vs. <code>let</code>.
+            For this demonstration, we are going to use <code>var</code>. <br>
+            The following is a list of rules you must follow when naming variables:<sup>(1)</sup>
+            <ul>
+                <li>Names can contain letters, digits, underscores, and dollar signs.</li>
+                <li>Names must begin with a letter</li>
+                <li>Names can also begin with $ and _</li>
+                <li>Names are case sensitive (y and Y are different variables)</li>
+                <li>Reserved words (like JavaScript keywords) cannot be used as names</li>
+            </ul>
+            <p>The following are examples of <strong>valid</strong> variable names: <code>var cit261;</code> <code>var CIT_261;</code> <code>var _C_i_T;</code>. <br>
+            The following are examples of <strong>invalid</strong> variable names: <code>var 261cit;</code> (cannot begin with number) <code>var Kitty_C@T;</code> (can't use '@' symbol). <br>
+            !! Don't forget that variable names are <strong>CaSe SeNsItIvE</strong> !! <br><br>
+            Once we have created a variable, we can assign values to it.  We use the <strong>Assignment Operator</strong> also known as the equal sign <code> = </code>. <br>
+            We can assign different types for data to a variable.  These include <strong>numbers</strong> (like 1, 256, 3.14 etc.), <strong>strings</strong> which are texts surrounded by quotes ("this is a string" or "100"),
+            <strong>boolean</strong> (true or false), <strong>undefined</strong> is when a variable has been declared (i.e. <code>var x;</code>) but has not had a value assigned to it yet, <strong>null</strong> is an assigned value that means
+            "no value", and <strong>object</strong> which will be talked about in another lesson.  One neat thing about JavaScript is that it is an "untyped" language.  That means that
+            you don't have to tell it what type of information your variable is holding like you do in other languages such as Java or C++. <br>
+            I could create a variable called "groupSize" and then assign it a value <br> <br>
+            <code>var groupSize;</code><br>
+            <code>groupSize = 7;</code><br><br>
+            Or I could do it all on one line. <br><br>
+            <code>var groupSize = 7;</code><br><br>
+            Multiple variables can be declared and/or defined with a single statement. <br>
+            <code>var groupSize, groupNumber, groupName;</code><br>
+            <code>var groupSize = 7, groupNumber = 3, groupName = "Team 3";</code><br>
+            Variables can also be assigned the value of another variable or an arithmetic value. <br>
+            <code>var x = 2; var y = x;</code> <br>
+            <code>var x = 8 * 8;</code><br><br>
+            <strong>Scope</strong> is somthing that needs to be kept in mind when working with variables.  If a variable is declared inside a set of braces (curly brackets "{ }")
+            it cannot be accessed outside of those braces, it has a <strong>local</strong> scope.  If you want a variable to have a <strong>global</strong> scope, it needs to be declared outside of a function or set of braces.
+            Basically, any variable can be accessed that is inside the codeblock (set of braces) you are working in, or above it.
+            </p>
+        </p>       
+    </div>
+    <div id="funcDiv"><h2>Functions</h2></div>
+    <div id="paramDiv"><h2>Parameters</h2></div>
+    <div id="ifDiv"><h2>Conditional Statements</h2></div>
+    <div id="loopDiv"><h2>Loops</h2></div>
+    <div id="arrayDiv"><h2>Arrays</h2></div>
+    <div id="assocDiv"><h2>Associative Arrays</h2></div>
+    <br>
+    <br>
+    <h3>Sources</h3>
+    <ul class="sources">
+        <li>(1) <a href="www.w3schools.com">w3schools.com</a></li>
+        <li>(2) <a href="javascript.info">javascript.info</a></li>
+        <li>(3) <a href="https://www.tutorialspoint.com/javascript/">tutorialspoint.com/javascript/</a></li>
+    </ul>
+</body>
+</html>
