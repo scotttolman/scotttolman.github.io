@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="jsfunc.css" />
     <script src="jsfunc.js"></script>
 </head>
+
 <body>
     <h1>This page will demostrate the following features in JavaScript</h1>
     <ul>
@@ -19,14 +21,19 @@
         <li>Arrays</li>
         <li>Associative Arrays</li>
     </ul>
-    <div id="varDiv"><h2>Variables</h2>
+    <div id="varDiv">
+        <h2>Variables</h2>
         <p>
-            Like many other programing languages, variables are a storage container that has a <strong>unique</strong> name.
-            variables are declared using either the keyword <code>var</code> or <code>let</code>.
-            <a href="https://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var-to-declare-a-variable">
-            This article</a> from StackOverflow details when you would use <code>var</code> vs. <code>let</code>.
-            For this demonstration, we are going to use <code>var</code>. <br>
-            The following is a list of rules you must follow when naming variables:<sup>(1)</sup>
+            Like many other programing languages, variables are a storage container that has a
+            <strong>unique</strong> name. variables are declared using either the keyword
+            <code>var</code> or
+            <code>let</code>.
+            <a href="https://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var-to-declare-a-variable">This article</a> from StackOverflow details when you would use
+            <code>var</code> vs.
+            <code>let</code>. For this demonstration, we are going to use
+            <code>var</code>.
+            <br> The following is a list of rules you must follow when naming variables:
+            <sup>(1)</sup>
             <ul>
                 <li>Names can contain letters, digits, underscores, and dollar signs.</li>
                 <li>Names must begin with a letter</li>
@@ -34,44 +41,219 @@
                 <li>Names are case sensitive (y and Y are different variables)</li>
                 <li>Reserved words (like JavaScript keywords) cannot be used as names</li>
             </ul>
-            <p>The following are examples of <strong>valid</strong> variable names: <code>var cit261;</code> <code>var CIT_261;</code> <code>var _C_i_T;</code>. <br>
-            The following are examples of <strong>invalid</strong> variable names: <code>var 261cit;</code> (cannot begin with number) <code>var Kitty_C@T;</code> (can't use '@' symbol). <br>
-            !! Don't forget that variable names are <strong>CaSe SeNsItIvE</strong> !! <br><br>
-            Once we have created a variable, we can assign values to it.  We use the <strong>Assignment Operator</strong> also known as the equal sign <code> = </code>. <br>
-            We can assign different types for data to a variable.  These include <strong>numbers</strong> (like 1, 256, 3.14 etc.), <strong>strings</strong> which are texts surrounded by quotes ("this is a string" or "100"),
-            <strong>boolean</strong> (true or false), <strong>undefined</strong> is when a variable has been declared (i.e. <code>var x;</code>) but has not had a value assigned to it yet, <strong>null</strong> is an assigned value that means
-            "no value", and <strong>object</strong> which will be talked about in another lesson.  One neat thing about JavaScript is that it is an "untyped" language.  That means that
-            you don't have to tell it what type of information your variable is holding like you do in other languages such as Java or C++. <br>
-            I could create a variable called "groupSize" and then assign it a value <br> <br>
-            <code>var groupSize;</code><br>
-            <code>groupSize = 7;</code><br><br>
-            Or I could do it all on one line. <br><br>
-            <code>var groupSize = 7;</code><br><br>
-            Multiple variables can be declared and/or defined with a single statement. <br>
-            <code>var groupSize, groupNumber, groupName;</code><br>
-            <code>var groupSize = 7, groupNumber = 3, groupName = "Team 3";</code><br>
-            Variables can also be assigned the value of another variable or an arithmetic value. <br>
-            <code>var x = 2; var y = x;</code> <br>
-            <code>var x = 8 * 8;</code><br><br>
-            <strong>Scope</strong> is somthing that needs to be kept in mind when working with variables.  If a variable is declared inside a set of braces (curly brackets "{ }")
-            it cannot be accessed outside of those braces, it has a <strong>local</strong> scope.  If you want a variable to have a <strong>global</strong> scope, it needs to be declared outside of a function or set of braces.
-            Basically, any variable can be accessed that is inside the codeblock (set of braces) you are working in, or above it.
+            <p>The following are examples of
+                <strong>valid</strong> variable names:
+                <code>var cit261;</code>
+                <code>var CIT_261;</code>
+                <code>var _C_i_T;</code>.
+                <br> The following are examples of
+                <strong>invalid</strong> variable names:
+                <code>var 261cit;</code> (cannot begin with number)
+                <code>var Kitty_C@T;</code> (can't use '@' symbol).
+                <br> !! Don't forget that variable names are
+                <strong>CaSe SeNsItIvE</strong> !!
+                <br>
+                <br> Once we have created a variable, we can assign values to it. We use the
+                <strong>Assignment Operator</strong> also known as the equal sign
+                <code> = </code>.
+                <br> We can assign different types for data to a variable. These include
+                <strong>numbers</strong> (like 1, 256, 3.14 etc.),
+                <strong>strings</strong> which are texts surrounded by quotes ("this is a string" or "100"),
+                <strong>boolean</strong> (true or false),
+                <strong>undefined</strong> is when a variable has been declared (i.e.
+                <code>var x;</code>) but has not had a value assigned to it yet,
+                <strong>null</strong> is an assigned value that means "no value", and
+                <strong>object</strong> which will be talked about in another lesson. One neat thing about JavaScript is that it
+                is an "untyped" language. That means that you don't have to tell it what type of information your variable
+                is holding like you do in other languages such as Java or C++.
+                <br> I could create a variable called "groupSize" and then assign it a value
+                <br>
+                <br>
+                <code>var groupSize;</code>
+                <br>
+                <code>groupSize = 7;</code>
+                <br>
+                <br> Or I could do it all on one line.
+                <br>
+                <br>
+                <code>var groupSize = 7;</code>
+                <br>
+                <br> Multiple variables can be declared and/or defined with a single statement.
+                <br>
+                <code>var groupSize, groupNumber, groupName;</code>
+                <br>
+                <code>var groupSize = 7, groupNumber = 3, groupName = "Team 3";</code>
+                <br> Variables can also be assigned the value of another variable or an arithmetic value.
+                <br>
+                <code>var x = 2; var y = x;</code>
+                <br>
+                <code>var x = 8 * 8;</code>
+                <br>
+                <br>
+                <strong>Scope</strong> is somthing that needs to be kept in mind when working with variables. If a variable is declared
+                inside a set of braces (curly brackets "{ }") it cannot be accessed outside of those braces, it has a
+                <strong>local</strong> scope. If you want a variable to have a
+                <strong>global</strong> scope, it needs to be declared outside of a function or set of braces. Basically, any variable
+                can be accessed that is inside the codeblock (set of braces) you are working in, or above it.
             </p>
-        </p>       
+        </p>
     </div>
-    <div id="funcDiv"><h2>Functions</h2></div>
-    <div id="paramDiv"><h2>Parameters</h2></div>
-    <div id="ifDiv"><h2>Conditional Statements</h2></div>
-    <div id="loopDiv"><h2>Loops</h2></div>
-    <div id="arrayDiv"><h2>Arrays</h2></div>
-    <div id="assocDiv"><h2>Associative Arrays</h2></div>
+    <div id="funcDiv">
+        <h2>Functions</h2>
+        <p>
+            Functions allow us to "do stuff" with javascript. We can make variables all day long, but without a function, they don't
+            do us any good. Functions "are executed when "something" invokes them."
+            <sup>(1)</sup> Another name for functions is methods. Functions allow us to write code that does something, and then
+            reuse that same peice of code again and again, just by invoking it. Functions begin with the keyword
+            <code>function</code> followed by the name of the function,
+            <code>function myFunction</code>. After the name comes a set of parenthesis followed by the enclosing set of braces
+            <code>function myFunction () { }</code>. The parenthesis are left empty if there are no parameters, or may contain
+            1 or more parameters. The body of the function contains all the instructions and is held between the beginning
+            and ending braces. Sometimes functions return information to the entity that called or invoked it. This information
+            is sent back using the
+            <code>return</code> statement. As stated earlier, variables that are declared inside of a function have
+            <strong>local</strong> scope, and can only be used inside that function. Once the function has finished, the variable
+            gets deleted. If a variable is defined outside of a function, it has
+            <strong>global</strong> scope. It can still be used inside the function, but when the function ends, the variable will
+            persist. That global variable can be used and changed by different functions as well.
+            <br>
+            A function can be invoked by an event such as <code>onclick</code>.  It can be embedded in the html with the <code>&ltscript&gt</code> tags.  It can even be invoked by another function.  To invoke a function you write the name of the function followed by the parenthesis and put inside the parenthesis any arguments.
+            <br>
+            <code>myFunction(x, y);</code>
+            <br>
+            This code will call the function "myFunction" and will pass (send) two variables called 'x' and 'y' to the function.  'x' and 'y' will be used in the function as parameters.  When something is being sent to a function, it is called and argument.  When the argument gets to a function, it is called a parameter.
+        </p>
+    </div>
+    <div id="paramDiv">
+        <h2>Parameters</h2>
+        <p>
+            When writing parameters into a function, the data type is not specified.  The name is simply listed.  If there is more than one parameter they are separated by a comma <code>(param1, param2, param3)</code>.  The name of a parameter does not have to match the name of the variable that is being passed as an argument.  When the parameter is listed, it is basically declaring a new variable and then setting the value as the argument that was passed.  If you have more than one parameter, how do you correctly match up the passed arguments so they don't get mixed up?  They are assigned in the order they are recieved to the order they are listed.  If I call a function <code>myFunc(7, 3, "tree");</code>  And my parameters are setup as <code>function myFunc(plant, height, width)</code>, I will end up with <code>plant = 7; height = 3; width = "tree"</code>, which doesn't really make much sense.  I should have passed the "tree" argument first.  If an aregument is missing, the corresponding parameter will be undefined.  If I have a variable <code>x</code> that has a value of 10 and I sent it to the <code>divideByTwo()</code> function, what will <code>x</code> be when <code>divideByTwo()</code> finishes?
+            The answer is 10.  The value of <code>x</code> is not changed by a function.  That is because areguments are <strong>Passed by Value</strong>, which means that a copy of the value of <code>x</code> is made and sent to the function.  The original <code>x</code> does not get sent.  When Objects are sent to a function, they are <strong>Passed by Reference</strong>, which means that anything done to the object in the function, will change the object.
+        </p>
+    </div>
+    <div id="ifDiv">
+        <h2>Conditional Statements</h2>
+        <p>
+        Conditional statements allow for actions to be performed based on certain conditions.  JavaScript has 4 conditional statements.
+        </p>
+        <ol>
+            <li>if</li>
+            <li>else</li>
+            <li>else if</li>
+            <li>switch</li>
+        </ol>
+        <p>
+        If, else, and else if are keywords followed by parenthesis.  A statement that will evaluate to either <strong>true</strong> or <strong>false</strong> is placed inside the parenthesis.  For an <code>if</code> statement, the action below is executed when the condition evaluated to true.  For an <code>else</code> statement, the action is executed if the code is false.  <code>else</code> and <code>else if</code> statements always follow an <code>if</code> statement.  An action listed below an <code>else if</code> will execute if the <code>if</code> statement that came before the <code>else if</code> statement was false <strong>and</strong> the condition in the <code>else if</code> statement is true.  Multiple <code>if</code> and <code>else if</code> statements can be used, but only 1 <code>else</code> statement.
+        <br>
+        <br>
+        It is possible to have multiple <code>ifs</code> and <code>else ifs</code> in one large conditional statement, but it is not the best way.  When checking for a specific condition out of many, a <code>switch</code> statement can be the best option.  A switch statement is setup as follows:
+        <br>
+        <pre>
+        <code>
+        switch(expression) {
+            case n:
+                code block
+                break;
+            case n:
+                code block
+                break;
+            default:
+                code block
+        }                    
+        </code>
+        </pre>        
+        </p>
+        <p>
+            "switch" is a keyword.  Inside the parenthesis is placed the expressions to be evaluated.  This could be a variable or any other expression.  The 'n' is what we are comparing to the expression.  If the expression evaluates to n, the the code block below is executed.  After it is executed, the break statement exits the switch statement and it is finished.  If no <code>case</code> evaluates to true, the default code block is executed.
+        </p>
+    </div>
+    <div id="loopDiv">
+        <h2>Loops</h2>
+        <p>
+            Loops allow a code block to execute repeatedly until a certain condition is met.  There are 4 types of loops in JavaScript:
+        </p>
+        <ul>
+            <li>for</li>
+            <li>for/in</li>
+            <li>while</li>
+            <li>do/while</li>
+        </ul>
+        <p>
+            <pre>
+                <code>
+                    for (var i = 0; i < 3; i++) {
+                        code to be executed;
+                    }
+                </code>
+            </pre>
+            <p>
+                There are three statements separated by semicolons after the "for".  The first is executed before the code block starts.  The second is a conditional statement.  If it evaluates to true then the code block is executed.  After the code block is executed, the last statement (which increments i by 1) is executed.  Then the loop starts over in the same order, except the first statement is not executed again. 
+            </p>
+        </p>
+        <br>
+        <p>
+        The "for/in" loop is for looping through the properties of an object.  We can look at this more after we learn about objects.
+        <br>
+        The while loop consists of a conditional statement followed by a code block.  As long as the conditional statement evaluates to true, the code block will run repeatedly.  Here is an example of a while loop:
+        <br>
+        <pre>
+            <code>
+                while (1 > 0) {
+                    Window.alert("1 is bigger than 0!");
+                }
+            </code>
+        </pre>
+        <p>
+        In this example as long as 1 is greater than 0, an alert will pop up on the screen.
+        </p>
+        <br>
+        <p>
+        If we are using a while loop and the condition were false the very first time, the code block would never run.  Sometimes we want it to run once and then check a condition to see if it should run again.  That is exactly what a do/while loop does.  Here's an example:
+        </p>
+        <pre>
+            <code>
+                do {
+                    console.log("Hello");
+                }
+                while (1 < 0);
+            </code>
+        </pre>
+        <p>
+        This code will run the first time, but then the condition evaluates to false and it will exit the loop.
+        </p>
+    </div>
+    <div id="arrayDiv">
+        <h2>Arrays</h2>
+        <p>
+            Arrays are a type of container variable that hold multiple values.  It is declared the same as any other variable with one exception.  I use <code>var students</code> to declare the variable name, but instead of setting it equal to a single value, I set it equal to square brackets with a comma separated list <code>["Adam", "Allen", "Dennis", "Irina", "Ricardo", "Scott", "Shanna Mae"]</code>.  Now my variable <code>students</code> contains 7 different values.  Each value can be accessed with a key, which starts at '0' and goes up to the number of items in the array minus 1 (because we start at 0 instead of 1).  If I want to access "Ricardo" in my students array, I would type <code>students[4]</code> because "Ricardo" is in the array slot 4 (counting from 0).
+        </p>
+    </div>
+    <div id="assocDiv">
+        <h2>Associative Arrays</h2>
+        <p>"Many programming languages support arrays with named indexes.
+            <br>
+            Arrays with named indexes are called associative arrays (or hashes).
+            <br>    
+            JavaScript does not support arrays with named indexes.
+             <br>   
+            In JavaScript, arrays always use numbered indexes."<sup>(1)</sup>
+        </p>
+        <p>Arrays are actually a type of object, but they are a special type in that the keys used to access them are always numbers.</p>
+    </div>
     <br>
     <br>
     <h3>Sources</h3>
     <ul class="sources">
-        <li>(1) <a href="www.w3schools.com">w3schools.com</a></li>
-        <li>(2) <a href="javascript.info">javascript.info</a></li>
-        <li>(3) <a href="https://www.tutorialspoint.com/javascript/">tutorialspoint.com/javascript/</a></li>
+        <li>(1)
+            <a href="www.w3schools.com">w3schools.com</a>
+        </li>
+        <li>(2)
+            <a href="javascript.info">javascript.info</a>
+        </li>
+        <li>(3)
+            <a href="https://www.tutorialspoint.com/javascript/">tutorialspoint.com/javascript/</a>
+        </li>
     </ul>
 </body>
+
 </html>
