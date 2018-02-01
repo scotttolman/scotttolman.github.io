@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JavaScript Function</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="function.css" />
+    <script src="function.js"></script>
+</head>
+
+<body>
+    <h1>This page shows several JavaScript features</h1>
+    <h2>included are the following</h2>
+    <ul>
+        <li>Loops</li>
+        <li>Conditional Statements</li>
+        <li>Functions</li>
+        <li>Variables</li>
+        <li>Parameters</li>
+        <li>Arrays</li>
+        <li>Associative Arrays</li>
+    </ul>
+    <div id="JS">
+        <h3>The function uses a loop to calculate a base to a power</h3>
+        Base
+        <input type="number" name="base" id="base" class="num"> Exponent
+        <input type="number" name="exp" id="exp" class="num">
+        <p id="loopAnswer"></p>
+        <button onclick="calcPower(base.value, exp.value)">Calculate Power</button>
+        <br>
+        <br>
+        <h3>This function uses a switch statement to tell you your eye color</h3>
+        <h4>Choose the option that matches your eye color</h4>
+        <input type="radio" name="eyeColor" id="brown" onchange="eyes(this.id)"> Brown eyes 
+        <br>
+        <input type="radio" name="eyecolor" id="blue" onchange="eyes(this.id)"> Blue eyes 
+        <br>
+        <input type="radio" name="eyeColor" id="green" onchange="eyes(this.id)"> Other 
+        <br>
+        <br>        
+        <h3>This function uses an if else statement to tell you your gender</h3>
+        <h4>What happens if you choose both???</h4>
+        Male <input type="checkbox" name="male" id="male">
+        Female <input type="checkbox" name="female" id="female">
+        <button onclick="selectGender()">Select</button>
+        <p id="genderReveal"></p>
+        <br>
+        <br>
+        <h3>This function will use an array to store your movie collection</h3>
+        <h4>Type the name of a movie and click the Add button.  When you are finished adding, click the View collection button</h4>
+        Movie <input type="text" name="movie" id="movie">
+        <button onclick="addMovie(movie.value)">Add</button>
+        <button onclick="showMovies()">View collection</button>
+        <br>
+        <p id="collection"></p>
+        <br>
+        <br>
+        <h3>This function will demonstrate an associative array by using a first name to look up an age</h3>
+        <h4>First, enter in several names with their ages into the fields</h4>
+        Name <input type="text" name="name" id="name"> Age <input type="text" name="age" id="age" class="num">
+        <button onclick="addEntry()">Add entry</button>
+        <h4>Now enter one of the names to see the corresponding age</h4>
+        Name <input type="text" name="nameKey" id="nameKey">
+        <button onclick="getAge()">Get Age</button>
+        <p id="showAge"></p>
+    </div>
+</body>
+
+</html>
