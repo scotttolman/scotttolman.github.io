@@ -1,3 +1,8 @@
 .num {
     width: 3em;
 }
+
+body {
+    padding-bottom: 5em;
+    padding-left: 1em;
+}
