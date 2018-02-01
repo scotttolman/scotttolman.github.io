@@ -9,6 +9,38 @@
     <script src="objects.js"></script>
 </head>
 <body>
-    
+    <!--JavaScript Objects - Object Creation Functions, Inheritance, Properties, Methods-->
+    <!--JavaScript variables are addressed by value, objects: by reference.  var x = object; is creating a pointer to the object-->
+    <h1>This page will demonstrate:</h1>
+    <ul>
+        <li>Object creation functions</li>
+        <li>Object properties</li>
+        <li>Object methods</li>
+        <li>Object inheritance</li>
+    </ul>
+    <br>
+    <h3>This will demonstrate a function that creates an object as well as properties of an object</h3>
+    <p>We have a function in our JS page that will create a "warrior" object for a video game</p>
+    <p>Our warrior will have 5 properties.  They are name, gender, level, health, and defense.  Fill out 
+    <br>
+    the form below to set the warrior's properties.  Then, click on the "Create warrior" button.</p>
+    Name <input type="text" name="warName" id="warName"> <br>
+    Gender
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" id="male" value="Male"> Male
+    <br> 
+    &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" id="female" value="Female"> Female<br>
+    Level <input type="number" name="level" id="level" class="num"> <br>
+    Health <input type="number" name="health" id="health" class="num"> <br>
+    Strength <input type="number" name="strength" id="strength" class="num"> <br>
+    <button onclick="xWarrior = new Warrior(warName.value, 'gender', level.value, health.value, strength.value)">Create warrior</button>
+    <br>
+    <p>Now click "Display". The warriors properties will then be displayed below.</p>
+    <button onclick="displayWarrior('warriorDisplay', xWarrior)">Display</button>
+    <p id="warriorDisplay"></p>
+    <br>
+    <br>
+    <h3>The following will demonstrate inheritance as well as object methods</h3>
+    <h4>We will make a new </h4>
 </body>
 </html>
