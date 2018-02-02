@@ -9,9 +9,7 @@
     <script src="objects.js"></script>
 </head>
 <body onload="hideExtras()">
-    <!--JavaScript Objects - Object Creation Functions, Inheritance, Properties, Methods-->
-    <!--JavaScript variables are addressed by value, objects: by reference.  let x = object; is creating a pointer to the object-->
-    <h1>This page will demonstrate:</h1>
+   <h1>This page will demonstrate:</h1>
     <ul>
         <li>Object creation functions</li>
         <li>Object properties</li>
@@ -21,9 +19,8 @@
     <br>
     <h3>This will demonstrate a function that creates an object as well as properties of an object</h3>
     <p>We have a function in our JS page that will create a "warrior" object for a video game</p>
-    <p>Our warrior will have 5 properties.  They are name, gender, level, health, and strength.  Fill out 
-    <br>
-    the form below to set the warrior's properties.  Then, click on the "Create warrior" button.</p>
+    <p>Our warrior will have 5 properties.  They are name, gender, level, health, and strength.  Fill out<br>
+        the form below to set the warrior's properties.  Then, click on the "Create warrior" button.</p>
     Name <input type="text" name="warName" id="warName"> <br>
     Gender
     <br>
@@ -37,11 +34,10 @@
     <button onclick="deleteWar()" id="delete"><strong>Delete warrior</strong></button>
     <button onclick="prev()" id="prev">Previous</button>
     <button onclick="next()" id="next">Next</button>
-    <p id="save">Save slot: 1</p>
+    <p id="save"><strong>Save slot: 1</strong></p>
+    <button onclick="displayWarrior()" id="displayWarrior">Display</button>
     <br>
-    <p>Now click "Display". The warriors properties will then be displayed below.</p>
-    <button onclick="displayWarrior()">Display</button>
-    <br>
+    <p id="warriorDisplay"></p>
     <button onclick="showExtras()" id="extraButton">Add properties and methods</button>
     <div id="extras">
         <h4>Weapons</h4>
@@ -57,9 +53,9 @@
         <input type="radio" name="ability" id="heal" value="Heal">Heal
         <input type="radio" name="ability" id="group" value="Group Damage">Group Damage
         <br>
-        <button onclick="setAttributes('weapon', 'pet', 'ability')">Choose attributes</button>
+        <button onclick="setAttributes('weapon', 'pet', 'ability')">Set attributes</button>
     </div>
-    <p id="warriorDisplay"></p>
+    <br>
     <p id="extraDisplay"></p>
 </body>
 </html>
