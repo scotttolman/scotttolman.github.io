@@ -87,9 +87,12 @@ function setAttributes(weapon, pet, ability) {
 // prototype constructor; adds additional properties and method;
 // displays additional info; creates button to execute method
 function addAttributes(Weapon, Pet, Ability) {
-    Warrior.prototype.weapon = Weapon; //try setting prototypes to undefined, then define them as regular attributes
-    Warrior.prototype.pet = Pet;
-    Warrior.prototype.ability = Ability;
+    Warrior.prototype.weapon = undefined; //try setting prototypes to undefined, then define them as regular attributes
+    Warrior.prototype.pet = undefined;
+    Warrior.prototype.ability = undefined;
+    warrior[war].weapon = Weapon;
+    warrior[war].pet = Pet;
+    warrior[war].ability = Ability;
     document.getElementById("extraDisplay").innerHTML =
     "Weapon: " + warrior[war].weapon + "<br>" +
     "Pet: " + warrior[war].pet + "<br>" +
