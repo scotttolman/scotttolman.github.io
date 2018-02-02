@@ -63,6 +63,9 @@ function displayWarrior() {
 // unhides button "Add properties and methods"
 function showExtras() {
     document.getElementById("extras").style.display = "inline";
+    if (warrior[war].weapon != undefined && warrior[war].pet != undefined
+        && warrior[war].ability != undefined)
+        document.getElementById("extraDisplay").style.display = "inline"
 }
 
 // sets variables based on user's selection calls prototype constructor
