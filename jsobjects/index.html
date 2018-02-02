@@ -8,9 +8,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="objects.css" />
     <script src="objects.js"></script>
 </head>
-<body>
+<body onload="hideExtras()">
     <!--JavaScript Objects - Object Creation Functions, Inheritance, Properties, Methods-->
-    <!--JavaScript variables are addressed by value, objects: by reference.  var x = object; is creating a pointer to the object-->
+    <!--JavaScript variables are addressed by value, objects: by reference.  let x = object; is creating a pointer to the object-->
     <h1>This page will demonstrate:</h1>
     <ul>
         <li>Object creation functions</li>
@@ -21,7 +21,7 @@
     <br>
     <h3>This will demonstrate a function that creates an object as well as properties of an object</h3>
     <p>We have a function in our JS page that will create a "warrior" object for a video game</p>
-    <p>Our warrior will have 5 properties.  They are name, gender, level, health, and defense.  Fill out 
+    <p>Our warrior will have 5 properties.  They are name, gender, level, health, and strength.  Fill out 
     <br>
     the form below to set the warrior's properties.  Then, click on the "Create warrior" button.</p>
     Name <input type="text" name="warName" id="warName"> <br>
@@ -33,14 +33,33 @@
     Level <input type="number" name="level" id="level" class="num"> <br>
     Health <input type="number" name="health" id="health" class="num"> <br>
     Strength <input type="number" name="strength" id="strength" class="num"> <br>
-    <button onclick="xWarrior = new Warrior(warName.value, 'gender', level.value, health.value, strength.value)">Create warrior</button>
+    <button onclick="newWar(warName.value, 'gender', level.value, health.value, strength.value)" id="create">Create warrior</button>
+    <button onclick="deleteWar()" id="delete"><strong>Delete warrior</strong></button>
+    <button onclick="prev()" id="prev">Previous</button>
+    <button onclick="next()" id="next">Next</button>
+    <p id="save">Save slot: 1</p>
     <br>
     <p>Now click "Display". The warriors properties will then be displayed below.</p>
-    <button onclick="displayWarrior('warriorDisplay', xWarrior)">Display</button>
+    <button onclick="displayWarrior()">Display</button>
+    <br>
+    <button onclick="showExtras()" id="extraButton">Add properties and methods</button>
+    <div id="extras">
+        <h4>Weapons</h4>
+        <input type="radio" name="weapon" id="sword" value="Sword">Sword 
+        <input type="radio" name="weapon" id="bow" value="Bow">Bow
+        <input type="radio" name="weapon" id="staff" value="Magic Staff">Magic Staff
+        <h4>Pet</h4>
+        <input type="radio" name="pet" id="eagle" value="Eagle">Eagle
+        <input type="radio" name="pet" id="wolf" value="Wolf">Wolf
+        <input type="radio" name="pet" id="bear" value="Bear">Bear
+        <h4>Abilities</h4>
+        <input type="radio" name="ability" id="run" value="Run">Run
+        <input type="radio" name="ability" id="heal" value="Heal">Heal
+        <input type="radio" name="ability" id="group" value="Group Damage">Group Damage
+        <br>
+        <button onclick="setAttributes('weapon', 'pet', 'ability')">Choose attributes</button>
+    </div>
     <p id="warriorDisplay"></p>
-    <br>
-    <br>
-    <h3>The following will demonstrate inheritance as well as object methods</h3>
-    <h4>We will make a new </h4>
+    <p id="extraDisplay"></p>
 </body>
 </html>
