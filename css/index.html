@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>css</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>CSS Transforms</h1>
+    <p>A transformation is an effect that lets an element change shape, size and position.</p>
+    <ul class="headings">
+        <li>translate()</li>
+            <p>Translate will move an element from its current location.  The method takes two parameters.  The first is for the X axis (left/right).  The second parameter is for the Y axis (up/down).  For each parameter you state a number of units followed by the type of unit.  If you want the element to move left and/or down, the value(s) will be negative.  Positive values make the element move right/up.</p>
+            <div class="_translate"></div>
+            <br><br>
+        <li>rotate()</li>
+            <p>Rotate will rotate a div clockwise or counter-clockwise.  Most of the time, the units will be specified in degrees; however, you can also use grad (400grad == 360deg), rad (3.14159265rad == 180deg), turn (1turn == 360deg).  Positive numbers rotate clockwise, negative rotate counter-clockwise.</p>
+            <div class="_rotate"></div>
+            <br><br>
+        <li>scale()</li>
+            <p>Scale changes the width and height of the element.  Width and height are the two respective parameters of the scale() function.  You can also pass a single parameter if the width and height are the same.  The parameter(s) is a number that is multiplied by the current size.  Thus, transform: scale(1) would make the element the exact same size, scale(2) would double the width and height, and scale(0.5) would be half the original size.</p>
+            <div class="_scale"></div>
+            <br><br>
+        <li>skew()</li>
+            <p>Skew slants the element.  It takes an X and Y parameter (a number specified by degrees(deg) or similar unit).  If you want to only slant the X or Y axis and not the other they use skewX() or skewY().</p>
+            <p>skewX</p>
+            <div class="_skewX"></div>
+            <p>skewY</p>
+            <div class="_skewY"></div>
+            <p>skew</p>
+            <div class="_skew"></div>
+            <br><br>
+        <li>matrix()</li>
+            <p>Matrix combines all of the previous 2D transforms into one method.  It takes 6 parameters as follows: matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY()).</p>
+            <div class="_matrix"></div>
+    </ul>
+</body>
+</html>

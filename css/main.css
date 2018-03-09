@@ -1,0 +1,84 @@
+._translate {
+    height: 50px;
+    width: 100px;
+    background-color: red;
+    border: 2px solid black;
+}
+
+._translate:hover {
+    transform: translate(20px, -20px)
+}
+
+._rotate {
+    height: 50px;
+    width: 100px;
+    background-color: orange;
+    border: 2px solid black;
+}
+
+._rotate:hover {
+    transform: rotate(45deg);
+}
+
+._scale {
+    height: 50px;
+    width: 100px;
+    background-color: yellow;
+    border: 2px solid black;
+}
+
+._scale:hover {
+    transform: scale(1.5, 3);
+}
+
+._skewX {
+    height: 50px;
+    width: 100px;
+    background-color: green;
+    border: 2px solid black;
+}
+
+._skewX:hover {
+    transform: skewX(45deg);
+}
+
+._skewY {
+    height: 50px;
+    width: 100px;
+    background-color: blue;
+    border: 2px solid black;
+}
+
+._skewY:hover {
+    transform: skewY(45deg);
+}
+
+._skew {
+    height: 50px;
+    width: 100px;
+    background-color: indigo;
+    border: 2px solid black;
+}
+
+._skew:hover {
+    transform: skew(10deg, 20deg);
+}
+
+._matrix {
+    height: 50px;
+    width: 100px;
+    background-color: violet;
+    border: 2px solid black;
+}
+
+._matrix:hover {
+    transform: matrix(2, .5, .5, 3, 50, -50);
+}
+
+.headings li {
+    font-size: 2em;
+}
+
+body {
+    margin: 10em;
+}
