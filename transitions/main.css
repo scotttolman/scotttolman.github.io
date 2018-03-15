@@ -1,0 +1,10 @@
+#pikachu {
+    height: 20em;
+    width: 20em;
+    transition: width 1s, height 2s, transform 3s, opacity 2s;
+}
+
+body {
+    margin-left: 5em;
+    margin-right: 10em;
+}

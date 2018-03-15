@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CSS Transitions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>CSS Transitions</h1>
+    <p>
+        CSS transitions are similar to transforms.  They both change the look of a div after a trigger sets them off.  The difference is that transforms change from one form to another instantly, while transitions do so gradually.  Transitions can even perform transforms in an animated or gradual way.
+        <br><br>
+        In order to create a transition, you need to specify in the CSS which property you want to transition as well as the length of time the transition will take.  You can add multiple properties to be affected by the transition and specify each of their transition times.  Also, you can specify the speed curve with the transition-timing-function property.
+    </p>
+    Transition delay <input type="number" name="dv" id="dv" value="0" style="width:2em" min="0" max="5">
+    <button onclick="delay(dv.value)">Change Delay</button>
+    <br><br>
+    Speed Curve: 
+    <button onclick="curve('linear')">Linear</button>
+    <button onclick="curve('ease')">Ease</button>
+    <button onclick="curve('ease-in')">Ease-In</button>
+    <button onclick="curve('ease-out')">Ease-Out</button>
+    <button onclick="curve('ease-in-out')">Ease-In-Out</button>
+    <button onclick="curve('cubic-bezier(.36,1.56,.63,-1)')">Cubic Bezier</button>
+    <br><br>
+    Effect:
+    <button onclick="shrink()">Shrink</button>
+    <button onclick="nrml()">Normal</button>
+    <button onclick="grow()">Grow</button>
+    <button onclick="spinCW()">Spin CW</button>
+    <button onclick="spinCCW()">Spin CCW</button>
+    <button onclick="fadeOut()">Fade Out</button>
+    <button onclick="fadeIn()">Fade In</button>
+    <br><br>
+    <img src="pikachu.png" alt="Pikachu" id="pikachu">
+</body>
+</html>
