@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>CSS Transitions</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,6 +20,7 @@
     <button onclick="delay(dv.value)">Change Delay</button>
     <br><br>
     Speed Curve: 
+    <br>
     <button onclick="curve('linear')">Linear</button>
     <button onclick="curve('ease')">Ease</button>
     <button onclick="curve('ease-in')">Ease-In</button>
@@ -26,7 +28,9 @@
     <button onclick="curve('ease-in-out')">Ease-In-Out</button>
     <button onclick="curve('cubic-bezier(.36,1.56,.63,-1)')">Cubic Bezier</button>
     <br><br>
+    <img src="pikachu.png" alt="Pikachu" id="pikachu">
     Effect:
+    <br>
     <button onclick="shrink()">Shrink</button>
     <button onclick="nrml()">Normal</button>
     <button onclick="grow()">Grow</button>
@@ -35,6 +39,5 @@
     <button onclick="fadeOut()">Fade Out</button>
     <button onclick="fadeIn()">Fade In</button>
     <br><br>
-    <img src="pikachu.png" alt="Pikachu" id="pikachu">
 </body>
 </html>
