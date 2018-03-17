@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
 </head>
-<body>
+<body onload="init()">
     <h1>CSS Transitions</h1>
     <p>
         CSS transitions are similar to transforms.  They both change the look of a div after a trigger sets them off.  The difference is that transforms change from one form to another instantly, while transitions do so gradually.  Transitions can even perform transforms in an animated or gradual way.
@@ -28,13 +28,13 @@
     <button onclick="curve('ease-in-out')">Ease-In-Out</button>
     <button onclick="curve('cubic-bezier(.36,1.56,.63,-1)')">Cubic Bezier</button>
     <br><br>
-    <img src="pikachu.png" alt="Pikachu" id="pikachu">
+    <img src="pikachu.png" alt="Pikachu" id="pikachu" draggable="true" ontouchstart="fadeIn()" ontouchcancel="fadeOut()" ontouchmove="spinCW()" ondrag="spinCCW()">
     <br>
     Effect:
     <br>
-    <button onclick="shrink()">Shrink</button>
-    <button onclick="nrml()">Normal</button>
-    <button onclick="grow()">Grow</button>
+    <button ondblclick="shrink()">Shrink (double-click)</button>
+    <button onclick="nrml()">Normal (click)</button>
+    <button oncontextmenu="grow()">Grow (right-click)</button>
     <button onclick="spinCW()">Spin CW</button>
     <button onclick="spinCCW()">Spin CCW</button>
     <button onclick="fadeOut()">Fade Out</button>

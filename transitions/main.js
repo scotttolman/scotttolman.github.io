@@ -1,3 +1,11 @@
+function init() {
+    document.getElementById("pikachu").addEventListener("transitionend", endTran)
+}
+
+function endTran() {
+    document.getElementById("pikachu").style.transform = "rotate(0deg)";
+}
+
 function shrink() {
     document.getElementById("pikachu").style.width = "10em";
     document.getElementById("pikachu").style.height = "10em";

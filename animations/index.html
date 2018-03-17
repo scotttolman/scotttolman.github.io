@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body onload="addEvent()">
+    <div class="controller">
+        <button onclick="play()"><strong>&#9654</strong></button>
+        <button onclick="pause()"><strong>&#9208</strong></button>
+        <button onclick="reverse()">&#9194</button>
+        <button onclick="forward()">&#9193</button>
+        <button onclick="halfSpeed()">0.5x</button>
+        <button onclick="normalSpeed()">1x</button>
+        <button onclick="fastSpeed()">2x</button>
+        <button id="loop" onclick="loop()">&#128257</button>
+        <button id="swap" onclick="swap()">&#128256</button>
+    </div>
+    <br><br>
+    <h1 id="header"></h1>
+    <br><br>
+    <img src="pikachu.png" alt="Pikachu" id="pikachu">
+    <img src="Golem.png" alt="Golem" id="golem">
+</body>
+</html>
