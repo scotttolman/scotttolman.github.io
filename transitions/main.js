@@ -4,6 +4,7 @@ function init() {
 
 function endTran() {
     document.getElementById("pikachu").style.transform = "rotate(0deg)";
+    document.getElementById("pikaudio").pause();
 }
 
 function shrink() {
