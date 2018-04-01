@@ -12,79 +12,64 @@
     <div class="header">
         <h1>Pokemon Stat and Damage Calculator</h1>
     </div>
-    <div>
-        <label for="yourPokemon">Your Pokemon</label>
-        <input type="text" name="yourPokemon" id="yourPokemon" size="9em">
-        <button>Get Base Stats</button>
-    </div>
-    <div>
-        <div class="brdr">
-            <table>
-                <tr>
-                    <th><label for="yLevel">Level</label></th>
-                    <td><input type="number" name="yLevel" id="yLevel" min="1" max="100"></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <th>IV</th>
-                    <th>EV</th>
-                </tr>
-                <tr>
-                    <th>HP</th>
-                    <td><input type="number" name="yHPIV" id="yHPIV" min="0" max="31"></td>
-                    <td><input type="number" name="yHPEV" id="yHPIV" min="0" max="252"></td>
-                </tr>
-                <tr>
-                    <th>Attack</th>
-                    <td><input type="number" name="yAttackIV" id="yAttackIV" min="0" max="31"></td>
-                    <td><input type="number" name="yAttackEV" id="yAttackIV" min="0" max="252"></td>
-                </tr>
-                <tr>
-                    <th>Defense</th>
-                    <td><input type="number" name="yDefenseIV" id="yDefenseIV" min="0" max="31"></td>
-                    <td><input type="number" name="yDefenseEV" id="yDefenseIV" min="0" max="252"></td>
-                </tr>
-                <tr>
-                    <th>Sp. Attack</th>
-                    <td><input type="number" name="yS_AttackIV" id="yS_AttackIV" min="0" max="31"></td>
-                    <td><input type="number" name="yS_AttackEV" id="yS_AttackIV" min="0" max="252"></td>
-                </tr>
-                <tr>
-                    <th>Sp. Defense</th>
-                    <td><input type="number" name="yS_DefenseIV" id="yS_DefenseIV" min="0" max="31"></td>
-                    <td><input type="number" name="yS_DefenseEV" id="yS_DefenseIV" min="0" max="252"></td>
-                </tr>
-                <tr>
-                    <th>Speed</th>
-                    <td><input type="number" name="ySpeedIV" id="ySpeedIV" min="0" max="31"></td>
-                    <td><input type="number" name="ySpeedEV" id="ySpeedIV" min="0" max="252"></td>
-                </tr>
-            </table>
-            <div class="advOpt">
-                <span>&lt&ltAdvanced Options&gt&gt</span>
-            </div>
-        </div>
+    <!--****************** User's Input **********************-->
+    <div id="yInput" class="brdr">
+        <table>
+            <tr>
+                <th><label for="yourPokemon"><h3>Your Pokemon</h3></label></th>
+                <td><input type="text" name="yourPokemon" id="yourPokemon" size="9em"></td>
+            </tr>
+            <tr>
+                <th><label for="yLevel">Level</label></th>
+                <td><input type="number" name="yLevel" id="yLevel" min="1" max="100"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <th>EV</th>
+                <th>IV</th>
+            </tr>
+            <tr>
+                <th>HP</th>
+                <td><input type="number" name="yHPEV" id="yHPEV" min="0" max="252"></td>
+                <td><input type="number" name="yHPIV" id="yHPIV" min="0" max="31"></td>
+            </tr>
+            <tr>
+                <th>Attack</th>
+                <td><input type="number" name="yAttackEV" id="yAttackEV" min="0" max="252"></td>
+                <td><input type="number" name="yAttackIV" id="yAttackIV" min="0" max="31"></td>
+            </tr>
+            <tr>
+                <th>Defense</th>
+                <td><input type="number" name="yDefenseEV" id="yDefenseEV" min="0" max="252"></td>
+                <td><input type="number" name="yDefenseIV" id="yDefenseIV" min="0" max="31"></td>
+            </tr>
+            <tr>
+                <th>Sp. Attack</th>
+                <td><input type="number" name="yS_AttackEV" id="yS_AttackEV" min="0" max="252"></td>
+                <td><input type="number" name="yS_AttackIV" id="yS_AttackIV" min="0" max="31"></td>
+            </tr>
+            <tr>
+                <th>Sp. Defense</th>
+                <td><input type="number" name="yS_DefenseEV" id="yS_DefenseEV" min="0" max="252"></td>
+                <td><input type="number" name="yS_DefenseIV" id="yS_DefenseIV" min="0" max="31"></td>
+            </tr>
+            <tr>
+                <th>Speed</th>
+                <td><input type="number" name="ySpeedEV" id="ySpeedEV" min="0" max="252"></td>
+                <td><input type="number" name="ySpeedIV" id="ySpeedIV" min="0" max="31"></td>
+            </tr>
+        </table>
         <br>
         <button id="yData">Get Data</button>
         <br><br>
-    </div>
-    <div>
-        <div class="brdr">
-            <table>
-                <tr>
-                    <th><label for="yLevel">Level</label></th>
-                    <td><input type="number" name="yLevel" id="yLevel" min="1" max="100"></td>
-                    <td></td>
-                </tr>
-            </table>
-            <button>Advanced Options</button>
+        <div class="advOpt">
+            <span>&#9660&#9660Advanced Options&#9660&#9660</span>
         </div>
-        <br>
-        <button id="yData">Get Data</button>
-        <br><br>
     </div>
-    <div class="brdr">
+    <br>
+    <!--*********************** User's Stats *************************-->
+    <div id="yStats" class="brdr">
         <h3>Your Stats</h3>
         <table>
             <tr>
@@ -113,58 +98,66 @@
             </tr>
         </table>
     </div>
-    <div>
-        <label for="oppPokemon">Opp. Pokemon</label>
-        <input type="text" name="oppPokemon" id="oppPokemon" size="9em">
-        <button>Get Base Stats</button> 
-    </div>
-    <div>
-        <div class="brdr">
-            <table>
-                <tr>
-                    <td></td>
-                    <th>IV</th>
-                    <th>EV</th>
-                </tr>
-                <tr>
-                    <th>HP</th>
-                    <td><input type="number" name="oHPIV" id="oHPIV" min="0" max="31"></td>
-                    <td><input type="number" name="oHPEV" id="oHPIV" min="0" max="252"></td>
-                </tr>
-                <tr>
-                    <th>Attack</th>
-                    <td><input type="number" name="oAttackIV" id="oAttackIV" min="0" max="31"></td>
-                    <td><input type="number" name="oAttackEV" id="oAttackIV" min="0" max="252"></td>
-                </tr>
-                <tr>
-                    <th>Defense</th>
-                    <td><input type="number" name="oDefenseIV" id="oDefenseIV" min="0" max="31"></td>
-                    <td><input type="number" name="oDefenseEV" id="oDefenseIV" min="0" max="252"></td>
-                </tr>
-                <tr>
-                    <th>Sp. Attack</th>
-                    <td><input type="number" name="oS_AttackIV" id="oS_AttackIV" min="0" max="31"></td>
-                    <td><input type="number" name="oS_AttackEV" id="oS_AttackIV" min="0" max="252"></td>
-                </tr>
-                <tr>
-                    <th>Sp. Defense</th>
-                    <td><input type="number" name="oS_DefenseIV" id="oS_DefenseIV" min="0" max="31"></td>
-                    <td><input type="number" name="oS_DefenseEV" id="oS_DefenseIV" min="0" max="252"></td>
-                </tr>
-                <tr>
-                    <th>Speed</th>
-                    <td><input type="number" name="oSpeedIV" id="oSpeedIV" min="0" max="31"></td>
-                    <td><input type="number" name="oSpeedEV" id="oSpeedIV" min="0" max="252"></td>
-                </tr>
-            </table>
-            <button>Basic</button>
-        </div>
+    <br>
+    <!--********************* Opponent's Input ********************-->
+    <div id="oInput" class="brdr">
+        <table>
+            <tr>
+                <th><label for="oppPokemon"><h3>Opponent's Pokemon</h3></label></th>
+                <td><input type="text" name="oppPokemon" id="oppPokemon" size="9em"></td>
+            </tr>
+            <tr>
+                <th><label for="oLevel">Level</label></th>
+                <td><input type="number" name="oLevel" id="oLevel" min="1" max="100"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <th>EV</th>
+                <th>IV</th>
+            </tr>
+            <tr>
+                <th>HP</th>
+                <td><input type="number" name="oHPEV" id="oHPEV" min="0" max="252"></td>
+                <td><input type="number" name="oHPIV" id="oHPIV" min="0" max="31"></td>
+            </tr>
+            <tr>
+                <th>Attack</th>
+                <td><input type="number" name="oAttackEV" id="oAttackEV" min="0" max="252"></td>
+                <td><input type="number" name="oAttackIV" id="oAttackIV" min="0" max="31"></td>
+            </tr>
+            <tr>
+                <th>Defense</th>
+                <td><input type="number" name="oDefenseEV" id="oDefenseEV" min="0" max="252"></td>
+                <td><input type="number" name="oDefenseIV" id="oDefenseIV" min="0" max="31"></td>
+            </tr>
+            <tr>
+                <th>Sp. Attack</th>
+                <td><input type="number" name="oS_AttackEV" id="oS_AttackEV" min="0" max="252"></td>
+                <td><input type="number" name="oS_AttackIV" id="oS_AttackIV" min="0" max="31"></td>
+            </tr>
+            <tr>
+                <th>Sp. Defense</th>
+                <td><input type="number" name="oS_DefenseEV" id="oS_DefenseEV" min="0" max="252"></td>
+                <td><input type="number" name="oS_DefenseIV" id="oS_DefenseIV" min="0" max="31"></td>
+            </tr>
+            <tr>
+                <th>Speed</th>
+                <td><input type="number" name="oSpeedEV" id="oSpeedEV" min="0" max="252"></td>
+                <td><input type="number" name="oSpeedIV" id="oSpeedIV" min="0" max="31"></td>
+            </tr>
+        </table>
         <br>
-        <button id="yData">Get Data</button>
+        <button id="oData">Get Data</button>
         <br><br>
+        <div class="advOpt">
+            <span>&#9660&#9660Advanced Options&#9660&#9660</span>
+        </div>
     </div>
-    <div class="brdr">
-        <h3>Opp. Stats</h3>
+    <br>
+    <!--************ Opponent's Stats*****************-->
+    <div id="oStats" class="brdr">
+        <h3>Opponent's Stats</h3>
         <table>
             <tr>
                 <td>HP</td>
@@ -192,35 +185,47 @@
             </tr>
         </table>
     </div>
-    <br><br>
-    <div class="brdr">
-        <h3>Stat Difference</h3>
+    <!--*********************** Choose move and factors *************************-->
+    <div id="moveAndFactors" class="brdr">
+        <h3>Choose Attack</h3>
         <table>
             <tr>
-                <td>HP</td>
-                <td id="dHPBar"></td>
+                <th>Move</th>
+                <td>
+                    <select name="moves" id="moves">
+                        <option value="Run Away">Run Away</option>
+                    </select>
+                </td>
             </tr>
             <tr>
-                <td>Attack</td>
-                <td id="dAttackBar"></td>
+                <th>Targets</th>
+                <td>
+                    <select name="targets" id="targes">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </td>
             </tr>
             <tr>
-                <td>Defense</td>
-                <td id="dDefenseBar"></td>
+                <th>Weather</th>
+                <td>
+                    <select name="weather" id="weather">
+                        <option value="None">None</option>
+                        <option value="Raining">Raining</option>
+                        <option value="Harsh Sunlight">Harsh Sunlight</option>
+                    </select>
+                </td>
             </tr>
             <tr>
-                <td>Sp. Attack</td>
-                <td id="dS_AttackBar"></td>
-            </tr>
-            <tr>
-                <td>Sp. Defense</td>
-                <td id="dS_DefenseBar"></td>
-            </tr>
-            <tr>
-                <td>Speed</td>
-                <td id="dSpeedBar"></td>
+                <th>Critical</th>
+                <td>
+                    <select name="critical" id="critical">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </td>
+                <td><span id="critChance">1</span>% Chance</td>
             </tr>
         </table>
     </div>
-</body>
-</html>
+    <br>
