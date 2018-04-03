@@ -44,10 +44,10 @@
     display: none;
 }
 
-td, input {
+td, input, button {
     font-size: 1.2em;
 }
 
-th {
+th{
     font-size: 1.5em;
 }
