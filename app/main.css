@@ -43,3 +43,11 @@
 #oT2Stat {
     display: none;
 }
+
+td, input {
+    font-size: 1.2em;
+}
+
+th {
+    font-size: 1.5em;
+}
