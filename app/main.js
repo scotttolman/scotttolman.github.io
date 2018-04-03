@@ -49,6 +49,12 @@ function oExpand() {
 }
 
 function getData(url, code) {
+    if (code == 1) {
+        document.getElementById("yBall").style.display = "inline";
+    }
+    if (code == 2) {
+        document.getElementById("oBall").style.display = "inline";
+    }
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.setRequestHeader('Content-type', 'application/json');
@@ -80,9 +86,11 @@ function getData(url, code) {
             switch(code) {
                 case 1:
                     document.getElementById("yPNameErr").innerHTML = "Pokemon not found"
+                    document.getElementById("yBall").style.display = "none";
                     break;
                 case 2:
                     document.getElementById("oPNameErr").innerHTML = "Pokemon not found"
+                    document.getElementById("oBall").style.display = "none";
                     break;
             }
         }
@@ -132,6 +140,7 @@ function calcYStats() {
     var Speed = ((((2 * Speed_Base) + Speed_IV + (Speed_EV / 4)) * lvl) / 100) + 5;
 
 
+    document.getElementById("yBall").style.display = "none";
     document.getElementById("yStatName").innerHTML = name;
     document.getElementById("yStatT1").innerHTML = type1;
     if (type2 != null) {
@@ -188,6 +197,7 @@ function calcOStats() {
     var Speed = ((((2 * Speed_Base) + Speed_IV + (Speed_EV / 4)) * lvl) / 100) + 5;
 
 
+    document.getElementById("oBall").style.display = "none";
     document.getElementById("oStatName").innerHTML = name;
     document.getElementById("oStatT1").innerHTML = type1;
     if (type2 != null) {
