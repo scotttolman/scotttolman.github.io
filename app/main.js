@@ -1,5 +1,7 @@
 var yPoke;
 var oPoke;
+var yMove;
+var mType;
 
 function initialize() {
     document.getElementById("yAdvOpt").addEventListener("click", yExpand);
@@ -30,37 +32,45 @@ function oExpand() {
     }
 }
 
-function getData(url, who, what) {
+function getData(url, code) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.setRequestHeader('Content-type', 'application/json');
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            handleJSON(JSON.parse(this.response));
-
+            switch(code) {
+                case 1:
+                    yPoke = JSON.parse(this.response);
+                    calcYStats();
+                    popMoves();
+                    break;
+                case 2:
+                    oPoke = JSON.parse(this.response);
+                    calcOStats();
+                    break;
+                case 3:
+                    yMove = JSON.parse(this.response);
+                    getData('https://pokeapi.co/api/v2/type/' + yMove.type.name + '/', 4)
+                    break;
+                case 4:
+                    mType = JSON.parse(this.response);
+                    calcDamage();
+                    break;
+            }
         }
       };
     xhr.send();
 }
-2
-function handleJSON(data) {
-    if (data.power) {
-        calcDamage(data);
-    }
-    else {
-        calcStats(data)
-    }
-}
 
-function calcStats(data) {
+function calcYStats() {
     var lvl = parseInt(document.getElementById("yLevel").value);
 
-    var HP_Base = data.stats[5].base_stat;
-    var Attack_Base = data.stats[4].base_stat;
-    var Defense_Base = data.stats[3].base_stat;
-    var S_Attack_Base = data.stats[2].base_stat;
-    var S_Defense_Base = data.stats[1].base_stat;
-    var Speed_Base = data.stats[0].base_stat;
+    var HP_Base = yPoke.stats[5].base_stat;
+    var Attack_Base = yPoke.stats[4].base_stat;
+    var Defense_Base = yPoke.stats[3].base_stat;
+    var S_Attack_Base = yPoke.stats[2].base_stat;
+    var S_Defense_Base = yPoke.stats[1].base_stat;
+    var Speed_Base = yPoke.stats[0].base_stat;
     
     var HP_IV = parseInt(document.getElementById("yHPIV").value);
     var Attack_IV = parseInt(document.getElementById("yAttackIV").value);
@@ -92,21 +102,96 @@ function calcStats(data) {
     document.getElementById("ySpeedBar").innerHTML = Math.floor(Speed);
 }
 
-function calcDamage(data) {
+function calcOStats() {
+    var lvl = parseInt(document.getElementById("oLevel").value);
 
+    var HP_Base = oPoke.stats[5].base_stat;
+    var Attack_Base = oPoke.stats[4].base_stat;
+    var Defense_Base = oPoke.stats[3].base_stat;
+    var S_Attack_Base = oPoke.stats[2].base_stat;
+    var S_Defense_Base = oPoke.stats[1].base_stat;
+    var Speed_Base = oPoke.stats[0].base_stat;
+    
+    var HP_IV = parseInt(document.getElementById("oHPIV").value);
+    var Attack_IV = parseInt(document.getElementById("oAttackIV").value);
+    var Defense_IV = parseInt(document.getElementById("oDefenseIV").value);
+    var S_Attack_IV = parseInt(document.getElementById("oS_AttackIV").value);
+    var S_Defense_IV = parseInt(document.getElementById("oS_DefenseIV").value);
+    var Speed_IV = parseInt(document.getElementById("oSpeedIV").value);
+    
+    var HP_EV = parseInt(document.getElementById("oHPEV").value);
+    var Attack_EV = parseInt(document.getElementById("oAttackEV").value);
+    var Defense_EV = parseInt(document.getElementById("oDefenseEV").value);
+    var S_Attack_EV = parseInt(document.getElementById("oS_AttackEV").value);
+    var S_Defense_EV = parseInt(document.getElementById("oS_DefenseEV").value);
+    var Speed_EV = parseInt(document.getElementById("oSpeedEV").value);
+
+    var HP = ((((2 * HP_Base) + HP_IV + (HP_EV / 4)) * lvl) / 100) + lvl + 10;
+    var Attack = ((((2 * Attack_Base) + Attack_IV + (Attack_EV / 4)) * lvl) / 100) + 5;
+    var Defense = ((((2 * Defense_Base) + Defense_IV + (Defense_EV / 4)) * lvl) / 100) + 5;
+    var S_Attack = ((((2 * S_Attack_Base) + S_Attack_IV + (S_Attack_EV / 4)) * lvl) / 100) + 5;
+    var S_Defense = ((((2 * S_Defense_Base) + S_Defense_IV + (S_Defense_EV / 4)) * lvl) / 100) + 5;
+    var Speed = ((((2 * Speed_Base) + Speed_IV + (Speed_EV / 4)) * lvl) / 100) + 5;
+
+
+    document.getElementById("oHPBar").innerHTML = Math.floor(HP);
+    document.getElementById("oAttackBar").innerHTML = Math.floor(Attack);
+    document.getElementById("oDefenseBar").innerHTML = Math.floor(Defense);
+    document.getElementById("oS_AttackBar").innerHTML = Math.floor(S_Attack);
+    document.getElementById("oS_DefenseBar").innerHTML = Math.floor(S_Defense);
+    document.getElementById("oSpeedBar").innerHTML = Math.floor(Speed);
 }
 
-function getURL(pick) {
-    var url;
-    var m = yPoke.moves;
-    for (var i = 0; i < moves.length; i++) {
-        if (m[i].move.name == pick) {
-            url = m[i].move.url;
-            break;
+function popMoves() {
+    var p = document.getElementById("moves");
+    var mvs = yPoke.moves;
+    for (var i = 0; i < mvs.length; i++) {
+        var m = mvs[i].move.name;
+        var u = mvs[i].move.url;
+        var o = document.createElement("option");
+        o.value = u;
+        o.innerHTML = m;
+        p.appendChild(o);
+    }
+    document.getElementById("critChance").innerHTML = ((yPoke.stats[0].base_stat / 512) * 100).toFixed(2);
+}
+
+function calcDamage() {
+    var power = yMove.power;
+    var accuracy = yMove.accuracy;
+    var type = yMove.type.name;
+    var lvl = parseInt(document.getElementById("yLevel").value);
+    var atk = parseInt(document.getElementById("yAttackBar").innerHTML);
+    var def = parseInt(document.getElementById("oDefenseBar").innerHTML);
+    var bDamage = ((((((2 * lvl) / 5) + 2) * power * atk / def) / 50) + 2);
+    var tDamage = bDamage;
+    tDamage *= calcType(type);
+    if (document.getElementById("critical").value == "Yes") {
+        tDamage *= 2;
+        document.getElementById("critMult").innerHTML = 2;
+        document.getElementById("tCrit").innerHTML = ((yPoke.stats[0].base_stat / 512) * 100).toFixed(2);
+    }
+    document.getElementById("baseDamage").innerHTML = Math.floor(bDamage);
+    document.getElementById("totalDamage").innerHTML = Math.floor(tDamage);
+    document.getElementById("KO").innerHTML = Math.ceil(parseInt(document.getElementById("oHPBar").innerHTML) / tDamage);
+}
+
+function calcType(type) {
+    var mult = mType.damage_relations;
+    for (var i = 0; i < mult.no_damage_to; i++) {
+        if (mult.no_damage_to[i].name == type) {
+            return 0;
         }
     }
-    if(url == undefined) {
-        console.log("move not found");
+    for (var i = 0; i < mult.half_damage_to; i++) {
+        if (mult.half_damage_to[i].name == type) {
+            return 0.5;
+        }
     }
-    getData(url, 'y', 'move')
+    for (var i = 0; i < mult.double_damage_to; i++) {
+        if (mult.double_damage_to[i].name == type) {
+            return 2;
+        }
+    }
+    return 1;
 }

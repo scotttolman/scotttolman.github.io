@@ -61,7 +61,7 @@
                 <td><input type="number" name="ySpeedIV" id="ySpeedIV" min="0" max="31" value="15"></td>
             </tr>
             <tr>
-                <th><button id="yData" onclick="getData('https://pokeapi.co/api/v2/pokemon/' + yourPokemon.value + '/', 'y', 'pokemon')">Get Data</button></th>
+                <th><button id="yData" onclick="getData('https://pokeapi.co/api/v2/pokemon/' + yourPokemon.value + '/', 1)">Get Data</button></th>
             </tr>
         </table>
         <br><br>
@@ -149,7 +149,7 @@
                 <td><input type="number" name="oSpeedIV" id="oSpeedIV" min="0" max="31" value="15"></td>
             </tr>
             <tr>
-                <th><button id="oData" onclick="getData('pokemon/' + yourPokemon.value, 'o', 'pokemon')">Get Data</button></th>
+                <th><button id="oData" onclick="getData('https://pokeapi.co/api/v2/pokemon/' + oppPokemon.value + '/', 2)">Get Data</button></th>
             </tr>
         </table>
         <br><br>
@@ -196,28 +196,7 @@
             <tr>
                 <th>Move</th>
                 <td>
-                    <select name="moves" id="moves">
-                        <option value="Run Away">Run Away</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>Targets</th>
-                <td>
-                    <select name="targets" id="targes">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>Weather</th>
-                <td>
-                    <select name="weather" id="weather">
-                        <option value="None">None</option>
-                        <option value="Raining">Raining</option>
-                        <option value="Harsh Sunlight">Harsh Sunlight</option>
-                    </select>
+                    <select name="moves" id="moves"></select>
                 </td>
             </tr>
             <tr>
@@ -228,10 +207,11 @@
                         <option value="Yes">Yes</option>
                     </select>
                 </td>
-                <td><span id="critChance">1</span>% Chance</td>
+                <td><span id="critChance">0</span>% Chance</td>
             </tr>
             <tr>
-                <th><button id="moveData" onclick="getURL(moves.value)">Get Data</button></th>
+                <td></td>
+                <th><button id="moveData" onclick="getData(moves.value, 3)">Calculate Damage</button></th>
             </tr>
         </table>
     </div>
@@ -242,20 +222,12 @@
         <table>
             <tr>
                 <th>Base Damage</th>
-                <td><span>10</span></td>
-            </tr>
-            <tr>
-                <th>Multi-target</th>
-                <td>x<span>1</span></td>
-            </tr>
-            <tr>
-                <th>Weather</th>
-                <td>x<span>1</span></td>
+                <td id="baseDamage"></td>
             </tr>
             <tr>
                 <th>Critical</th>
-                <td>x<span>1</span></td>
-                <td><span id="critChance">1</span>% Chance</td>
+                <td>x<span id="critMult">1</span></td>
+                <td><span id="tCrit">0</span>% Chance</td>
             </tr>
             <tr>
                 <th><strong><hr></strong></th>
@@ -264,11 +236,11 @@
             </tr>
             <tr>
                 <th><strong>Total</strong></th>
-                <td><span>10</span></td>
+                <td><span id="totalDamage"></span></td>
             </tr>
             <tr>
                 <th>Hits to KO</th>
-                <td><span>3</span></td>
+                <td><span id="KO"></span></td>
             </tr>
         </table>
     </div>
