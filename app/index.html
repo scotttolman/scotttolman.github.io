@@ -18,11 +18,11 @@
             <tr>
                 <th><label for="yourPokemon"><h3>Your Pokemon</h3></label></th>
                 <td><input type="text" name="yourPokemon" id="yourPokemon" size="9em"></td>
+                <td id="yPNameErr"></td>
             </tr>
             <tr>
                 <th><label for="yLevel">Level</label></th>
-                <td><input type="number" name="yLevel" id="yLevel" min="1" max="100"></td>
-                <td></td>
+                <td><input type="number" name="yLevel" id="yLevel" min="1" max="100" value="1"></td>
             </tr>
             <tr class="yAdv">
                 <td></td>
@@ -61,12 +61,12 @@
                 <td><input type="number" name="ySpeedIV" id="ySpeedIV" min="0" max="31" value="15"></td>
             </tr>
             <tr>
-                <th><button id="yData" onclick="getData('https://pokeapi.co/api/v2/pokemon/' + yourPokemon.value + '/', 1)">Get Data</button></th>
+                <th><button id="yData" onclick="getData('https://pokeapi.co/api/v2/pokemon/' + yourPokemon.value.toLowerCase() + '/', 1)">Get Data</button></th>
             </tr>
         </table>
         <br><br>
         <div class="advOpt" id="yAdvOpt">
-            <span>&#9660&#9660Advanced Options&#9660&#9660</span>
+            <span id="yAdvOptTxt">&#9660&#9660Advanced Options&#9660&#9660</span>
         </div>
     </div>
     <br>
@@ -74,6 +74,18 @@
     <div id="yStats" class="brdr">
         <h3>Your Stats</h3>
         <table>
+            <tr>
+                <td>Name</td>
+                <td id="yStatName"></td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td id="yStatT1"></td>
+            </tr>
+            <tr id="yT2Stat">
+                <td>Type</td>
+                <td id="yStatT2"></td>
+            </tr>
             <tr>
                 <td>HP</td>
                 <td id="yHPBar"></td>
@@ -107,11 +119,11 @@
             <tr>
                 <th><label for="oppPokemon"><h3>Opponent's Pokemon</h3></label></th>
                 <td><input type="text" name="oppPokemon" id="oppPokemon" size="9em"></td>
+                <td id="oPNameErr"></td>
             </tr>
             <tr>
                 <th><label for="oLevel">Level</label></th>
-                <td><input type="number" name="oLevel" id="oLevel" min="1" max="100"></td>
-                <td></td>
+                <td><input type="number" name="oLevel" id="oLevel" min="1" max="100" value="1"></td>
             </tr>
             <tr class="oAdv">
                 <td></td>
@@ -154,7 +166,7 @@
         </table>
         <br><br>
         <div class="advOpt" id="oAdvOpt">
-            <span>&#9660&#9660Advanced Options&#9660&#9660</span>
+            <span id="oAdvOptTxt">&#9660&#9660Advanced Options&#9660&#9660</span>
         </div>
     </div>
     <br>
@@ -162,6 +174,18 @@
     <div id="oStats" class="brdr">
         <h3>Opponent's Stats</h3>
         <table>
+            <tr>
+                <td>Name</td>
+                <td id="oStatName"></td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td id="oStatT1"></td>
+            </tr>
+            <tr id="oT2Stat">
+                <td>Type</td>
+                <td id="oStatT2"></td>
+            </tr>
             <tr>
                 <td>HP</td>
                 <td id="oHPBar"></td>

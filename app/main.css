@@ -21,6 +21,7 @@
 
 .yAdv {
     display: none;
+    transition: 500ms;
 }
 
 #yAdv {
@@ -28,5 +29,17 @@
 }
 
 .oAdv {
+    display: none;
+}
+
+#yPNameErr, #oPNameErr {
+    color: red;
+}
+
+#yT2Stat {
+    display: none;
+}
+
+#oT2Stat {
     display: none;
 }

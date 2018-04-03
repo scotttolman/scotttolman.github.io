@@ -18,6 +18,14 @@ function yExpand() {
             rows[i].style.display = "none"
         }
     }
+    var opt = document.getElementById("yAdvOptTxt");
+    var adv = document.getElementsByClassName("yAdv")[0].style.display;
+    if (adv == "none") {
+        opt.innerHTML = "&#9660&#9660Advanced Options&#9660&#9660";
+    }
+    else {
+    opt.innerHTML = "&#9650&#9650Basic Options&#9650&#9650";
+    }
 }
 
 function oExpand() {
@@ -30,6 +38,14 @@ function oExpand() {
             rows[i].style.display = "none"
         }
     }
+    var opt = document.getElementById("oAdvOptTxt");
+    var adv = document.getElementsByClassName("oAdv")[0].style.display;
+    if (adv == "none") {
+        opt.innerHTML = "&#9660&#9660Advanced Options&#9660&#9660";
+    }
+    else {
+    opt.innerHTML = "&#9650&#9650Basic Options&#9650&#9650";
+    }
 }
 
 function getData(url, code) {
@@ -40,11 +56,13 @@ function getData(url, code) {
         if (this.readyState == 4 && this.status == 200) {
             switch(code) {
                 case 1:
+                    document.getElementById("yPNameErr").innerHTML = ""
                     yPoke = JSON.parse(this.response);
                     calcYStats();
                     popMoves();
                     break;
                 case 2:
+                    document.getElementById("oPNameErr").innerHTML = ""
                     oPoke = JSON.parse(this.response);
                     calcOStats();
                     break;
@@ -58,12 +76,32 @@ function getData(url, code) {
                     break;
             }
         }
+        else if (this.readyState == 4 && this.status != 200) {
+            switch(code) {
+                case 1:
+                    document.getElementById("yPNameErr").innerHTML = "Pokemon not found"
+                    break;
+                case 2:
+                    document.getElementById("oPNameErr").innerHTML = "Pokemon not found"
+                    break;
+            }
+        }
       };
     xhr.send();
 }
 
 function calcYStats() {
+    document.getElementById("yT2Stat").style.display = "none";
     var lvl = parseInt(document.getElementById("yLevel").value);
+    var name = yPoke.name;
+    var type1 = yPoke.types[0].type.name;
+    var type2;
+    if (yPoke.types[1] == undefined) {
+        type2 = null;
+    }
+    else {
+        type2 = yPoke.types[1].type.name;
+    }
 
     var HP_Base = yPoke.stats[5].base_stat;
     var Attack_Base = yPoke.stats[4].base_stat;
@@ -94,6 +132,12 @@ function calcYStats() {
     var Speed = ((((2 * Speed_Base) + Speed_IV + (Speed_EV / 4)) * lvl) / 100) + 5;
 
 
+    document.getElementById("yStatName").innerHTML = name;
+    document.getElementById("yStatT1").innerHTML = type1;
+    if (type2 != null) {
+        document.getElementById("yStatT2").innerHTML = type2;
+        document.getElementById("yT2Stat").style.display = "table-row";
+    }
     document.getElementById("yHPBar").innerHTML = Math.floor(HP);
     document.getElementById("yAttackBar").innerHTML = Math.floor(Attack);
     document.getElementById("yDefenseBar").innerHTML = Math.floor(Defense);
@@ -103,7 +147,17 @@ function calcYStats() {
 }
 
 function calcOStats() {
+    document.getElementById("oT2Stat").style.display = "none";
     var lvl = parseInt(document.getElementById("oLevel").value);
+    var name = oPoke.name;
+    var type1 = oPoke.types[0].type.name;
+    var type2;
+    if (oPoke.types[1] == undefined) {
+        type2 = null;
+    }
+    else {
+        type2 = oPoke.types[1].type.name;
+    }
 
     var HP_Base = oPoke.stats[5].base_stat;
     var Attack_Base = oPoke.stats[4].base_stat;
@@ -134,6 +188,12 @@ function calcOStats() {
     var Speed = ((((2 * Speed_Base) + Speed_IV + (Speed_EV / 4)) * lvl) / 100) + 5;
 
 
+    document.getElementById("oStatName").innerHTML = name;
+    document.getElementById("oStatT1").innerHTML = type1;
+    if (type2 != null) {
+        document.getElementById("oStatT2").innerHTML = type2;
+        document.getElementById("oT2Stat").style.display = "table-row";
+    }
     document.getElementById("oHPBar").innerHTML = Math.floor(HP);
     document.getElementById("oAttackBar").innerHTML = Math.floor(Attack);
     document.getElementById("oDefenseBar").innerHTML = Math.floor(Defense);
@@ -169,7 +229,7 @@ function calcDamage() {
     if (document.getElementById("critical").value == "Yes") {
         tDamage *= 2;
         document.getElementById("critMult").innerHTML = 2;
-        document.getElementById("tCrit").innerHTML = ((yPoke.stats[0].base_stat / 512) * 100).toFixed(2);
+        document.getElementById("tCrit").innerHTML = ((yPoke.stats[0].base_stat / 512) * 100).toFixed(2);                            
     }
     document.getElementById("baseDamage").innerHTML = Math.floor(bDamage);
     document.getElementById("totalDamage").innerHTML = Math.floor(tDamage);
