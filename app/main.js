@@ -336,6 +336,9 @@ function getColor(type) {
 
 function popMoves() {
     var p = document.getElementById("moves");
+    for (var i = 0; i < p.childElementCount; i++) {
+        p.removeChild(p.childNodes[i]);
+    }
     var mvs = yPoke.moves;
     for (var i = 0; i < mvs.length; i++) {
         var m = mvs[i].move.name;
