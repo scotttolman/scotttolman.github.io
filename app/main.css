@@ -99,3 +99,19 @@ button{
     98% {background-color: #705848}
     100% {background-color: #EE99AC}
 }
+
+.graph {
+    background-color: red;
+    height: 10px;
+    width: 0px;
+    transition: 3s;
+}
+
+div {
+    display:block;
+    transition: all .2s ease-out;
+}
+
+.hidden {
+display:none;
+}

@@ -108,6 +108,8 @@ function getData(url, code) {
 }
 
 function calcYStats() {
+    document.getElementById("yStats").style.display = "block"
+    document.getElementById("oInput").style.display = "block"
     document.getElementById("yT2Stat").style.display = "none";
     var lvl = parseInt(document.getElementById("yLevel").value);
     var name = yPoke.name;
@@ -162,11 +164,19 @@ function calcYStats() {
     document.getElementById("yS_AttackBar").innerHTML = Math.floor(S_Attack);
     document.getElementById("yS_DefenseBar").innerHTML = Math.floor(S_Defense);
     document.getElementById("ySpeedBar").innerHTML = Math.floor(Speed);
+    document.getElementById("yHPBarGraph").style.width = Math.floor(HP) + "px";
+    document.getElementById("yAttackBarGraph").style.width = Math.floor(Attack) + "px";
+    document.getElementById("yDefenseBarGraph").style.width = Math.floor(Defense) + "px";
+    document.getElementById("yS_AttackBarGraph").style.width = Math.floor(S_Attack) + "px";
+    document.getElementById("yS_DefenseBarGraph").style.width = Math.floor(S_Defense) + "px";
+    document.getElementById("ySpeedBarGraph").style.width = Math.floor(Speed) + "px";
     
     changeColors("y");
 }
 
 function calcOStats() {
+    document.getElementById("oStats").style.display = "block"
+    document.getElementById("moveAndFactors").style.display = "block"
     document.getElementById("oT2Stat").style.display = "none";
     var lvl = parseInt(document.getElementById("oLevel").value);
     var name = oPoke.name;
@@ -221,6 +231,12 @@ function calcOStats() {
     document.getElementById("oS_AttackBar").innerHTML = Math.floor(S_Attack);
     document.getElementById("oS_DefenseBar").innerHTML = Math.floor(S_Defense);
     document.getElementById("oSpeedBar").innerHTML = Math.floor(Speed);
+    document.getElementById("oHPBarGraph").style.width = Math.floor(HP) + "px";
+    document.getElementById("oAttackBarGraph").style.width = Math.floor(Attack) + "px";
+    document.getElementById("oDefenseBarGraph").style.width = Math.floor(Defense) + "px";
+    document.getElementById("oS_AttackBarGraph").style.width = Math.floor(S_Attack) + "px";
+    document.getElementById("oS_DefenseBarGraph").style.width = Math.floor(S_Defense) + "px";
+    document.getElementById("oSpeedBarGraph").style.width = Math.floor(Speed) + "px";
 
     changeColors("o");
 }
@@ -298,6 +314,7 @@ function popMoves() {
 }
 
 function calcDamage() {
+    document.getElementById("outcome").style.display = "block"
     var type = yMove.type.name;
     var typeColor = getColor(type);
     var power = yMove.power;

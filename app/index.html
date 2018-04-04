@@ -79,7 +79,7 @@
         </div>
         <br>
         <!--*********************** User's Stats *************************-->
-        <div id="yStats" class="brdr">
+        <div id="yStats" class="brdr  hidden">
             <h3>Your Stats</h3>
             <table>
                 <tr>
@@ -97,32 +97,38 @@
                 <tr>
                     <td>HP</td>
                     <td id="yHPBar"></td>
+                    <td><canvas id="yHPBarGraph" class="graph"></canvas></td>
                 </tr>
                 <tr>
                     <td>Attack</td>
                     <td id="yAttackBar"></td>
+                    <td><canvas id="yAttackBarGraph" class="graph"></canvas></td>
                 </tr>
                 <tr>
                     <td>Defense</td>
                     <td id="yDefenseBar"></td>
+                    <td><canvas id="yDefenseBarGraph" class="graph"></canvas></td>
                 </tr>
                 <tr>
                     <td>Sp. Attack</td>
                     <td id="yS_AttackBar"></td>
+                    <td><canvas id="yS_AttackBarGraph" class="graph"></canvas></td>
                 </tr>
                 <tr>
                     <td>Sp. Defense</td>
                     <td id="yS_DefenseBar"></td>
+                    <td><canvas id="yS_DefenseBarGraph" class="graph"></canvas></td>
                 </tr>
                 <tr>
                     <td>Speed</td>
                     <td id="ySpeedBar"></td>
+                    <td><canvas id="ySpeedBarGraph" class="graph"></canvas></td>
                 </tr>
             </table>
         </div>
         <br>
         <!--********************* Opponent's Input ********************-->
-        <div id="oInput" class="brdr">
+        <div id="oInput" class="brdr  hidden">
             <table>
                 <tr>
                     <th><label for="oppPokemon"><h3>Opponent's Pokemon</h3></label></th>
@@ -188,7 +194,7 @@
         </div>
         <br>
         <!--************ Opponent's Stats*****************-->
-        <div id="oStats" class="brdr">
+        <div id="oStats" class="brdr  hidden">
             <h3>Opponent's Stats</h3>
             <table>
                 <tr>
@@ -206,32 +212,38 @@
                 <tr>
                     <td>HP</td>
                     <td id="oHPBar"></td>
+                    <td><canvas id="oHPBarGraph" class="graph"></canvas></td>
                 </tr>
                 <tr>
                     <td>Attack</td>
                     <td id="oAttackBar"></td>
+                    <td><canvas id="oAttackBarGraph" class="graph"></canvas></td>
                 </tr>
                 <tr>
                     <td>Defense</td>
                     <td id="oDefenseBar"></td>
+                    <td><canvas id="oDefenseBarGraph" class="graph"></canvas></td>
                 </tr>
                 <tr>
                     <td>Sp. Attack</td>
                     <td id="oS_AttackBar"></td>
+                    <td><canvas id="oS_AttackBarGraph" class="graph"></canvas></td>
                 </tr>
                 <tr>
                     <td>Sp. Defense</td>
                     <td id="oS_DefenseBar"></td>
+                    <td><canvas id="oS_DefenseBarGraph" class="graph"></canvas></td>
                 </tr>
                 <tr>
                     <td>Speed</td>
                     <td id="oSpeedBar"></td>
+                    <td><canvas id="oSpeedBarGraph" class="graph"></canvas></td>
                 </tr>
             </table>
         </div>
         <br>
         <!--*********************** Choose move and factors *************************-->
-        <div id="moveAndFactors" class="brdr">
+        <div id="moveAndFactors" class="brdr  hidden">
             <h3>Choose Attack</h3>
             <table>
                 <tr>
@@ -241,14 +253,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Critical</th>
+                    <th>Critical (<span id="critChance">0</span>% chance)</th>
                     <td>
                         <select name="critical" id="critical">
                             <option value="No">No</option>
                             <option value="Yes">Yes</option>
                         </select>
                     </td>
-                    <td><span id="critChance">0</span>% Chance</td>
                 </tr>
             </table>
             <br>
@@ -259,7 +270,7 @@
         </div>
         <br>
         <!--*********************** OUTCOME *************************-->
-        <div id="outcome" class="brdr">
+        <div id="outcome" class="brdr  hidden">
             <h3>Damage Outcome</h3>
             <table>
                 <tr>
