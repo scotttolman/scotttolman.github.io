@@ -12,7 +12,7 @@
     font-size: 1.5em;
     border: 3px solid black;
     cursor: pointer;
-    transition: 500ms;
+    transition: height 500ms;
 }
 
 .advOpt:hover {
@@ -104,14 +104,95 @@ button{
     background-color: red;
     height: 10px;
     width: 0px;
-    transition: 3s;
+    transition: 2s;
+    transition-delay: 2s;
 }
 
-div {
-    display:block;
-    transition: all .2s ease-out;
+#yInput {
+    position: unset;
 }
 
-.hidden {
-display:none;
+#yStats {
+    display: none;
+    animation-name: yStats;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: forwards;
+    animation-play-state: paused;
+    backface-visibility: hidden;
+}
+
+@keyframes yStats {
+    0%  {transform: rotateY(180deg)}
+    100% {transform: rotateY(0deg)}
+}
+
+#oInput {
+    display: none;
+    animation-name: oInput;
+    animation-duration: 2s;
+    animation-delay: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-play-state: paused;
+    backface-visibility: hidden;
+    animation-fill-mode: forwards;
+    transform: rotateY(180deg);
+}
+
+@keyframes oInput {
+    0%  {transform: rotateY(180deg)}
+    100% {transform: rotateY(0deg)}
+}
+
+#oStats {
+    display: none;
+    animation-name: oStats;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: forwards;
+    animation-play-state: paused;
+    backface-visibility: hidden;
+}
+
+@keyframes oStats {
+    0%  {transform: rotateY(180deg)}
+    100% {transform: rotateY(0deg)}
+}
+
+#moveAndFactors {
+    display: none;
+    animation-name: moveAndFactors;
+    animation-duration: 2s;
+    animation-delay: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: forwards;
+    animation-play-state: paused;
+    backface-visibility: hidden;
+    animation-fill-mode: forwards;
+    transform: rotateY(180deg);
+}
+
+@keyframes moveAndFactors {
+    0%  {transform: rotateY(180deg)}
+    100% {transform: rotateY(0deg)}
+}
+
+#outcome {
+    display: none;
+    animation-name: outcome;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: forwards;
+    animation-play-state: paused;
+    backface-visibility: hidden;
+}
+
+@keyframes outcome {
+    0%  {transform: rotateY(180deg)}
+    100% {transform: rotateY(0deg)}
 }

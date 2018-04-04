@@ -51,9 +51,11 @@ function oExpand() {
 function getData(url, code) {
     if (code == 1) {
         document.getElementById("yBall").style.display = "block";
+        document.getElementById("yStats").style.display = "block"
     }
     if (code == 2) {
         document.getElementById("oBall").style.display = "block";
+        document.getElementById("oStats").style.display = "block"
     }
     if (code == 3) {
         document.getElementById("dBall").style.display = "block";
@@ -108,8 +110,9 @@ function getData(url, code) {
 }
 
 function calcYStats() {
-    document.getElementById("yStats").style.display = "block"
-    document.getElementById("oInput").style.display = "block"
+    document.getElementById("yStats").style.animationPlayState = "running";
+    document.getElementById("oInput").style.display = "block";
+    document.getElementById("oInput").style.animationPlayState = "running";
     document.getElementById("yT2Stat").style.display = "none";
     var lvl = parseInt(document.getElementById("yLevel").value);
     var name = yPoke.name;
@@ -175,8 +178,9 @@ function calcYStats() {
 }
 
 function calcOStats() {
-    document.getElementById("oStats").style.display = "block"
-    document.getElementById("moveAndFactors").style.display = "block"
+    document.getElementById("oStats").style.animationPlayState = "running";
+    document.getElementById("moveAndFactors").style.display = "block";
+    document.getElementById("moveAndFactors").style.animationPlayState = "running";
     document.getElementById("oT2Stat").style.display = "none";
     var lvl = parseInt(document.getElementById("oLevel").value);
     var name = oPoke.name;
@@ -314,7 +318,8 @@ function popMoves() {
 }
 
 function calcDamage() {
-    document.getElementById("outcome").style.display = "block"
+    document.getElementById("outcome").style.display = "block";
+    document.getElementById("outcome").style.animationPlayState = "running";
     var type = yMove.type.name;
     var typeColor = getColor(type);
     var power = yMove.power;
