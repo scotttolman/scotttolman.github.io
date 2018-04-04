@@ -21,11 +21,14 @@
 
 .yAdv {
     display: none;
+    overflow: hidden;
     transition: 500ms;
 }
 
 #yAdv {
     display: none;
+    overflow: hidden;
+    transition: 500ms;
 }
 
 .oAdv {
@@ -70,4 +73,29 @@ button{
     margin: auto;
     width: 80%;
     height: 2em;
+}
+
+#bdy {
+    animation: clr 60s cubic-bezier(0,1,1,0) 0s infinite forwards;
+}
+
+@keyframes clr {
+    6%  {background-color: #A8A878}
+    12%  {background-color: #C03028}
+    18% {background-color: #A890F0}
+    24% {background-color: #A040A0}
+    30% {background-color: #E0C068}
+    36% {background-color: #B8A038}
+    42% {background-color: #A8B820}
+    48% {background-color: #705898}
+    54% {background-color: #B8B8D0}
+    60% {background-color: #F08030}
+    66% {background-color: #6890F0}
+    72% {background-color: #78C850}
+    78% {background-color: #F8D030}
+    84% {background-color: #F85888}
+    90% {background-color: #98D8D8}
+    96% {background-color: #7038F8}
+    98% {background-color: #705848}
+    100% {background-color: #EE99AC}
 }

@@ -162,6 +162,8 @@ function calcYStats() {
     document.getElementById("yS_AttackBar").innerHTML = Math.floor(S_Attack);
     document.getElementById("yS_DefenseBar").innerHTML = Math.floor(S_Defense);
     document.getElementById("ySpeedBar").innerHTML = Math.floor(Speed);
+    
+    changeColors("y");
 }
 
 function calcOStats() {
@@ -219,6 +221,66 @@ function calcOStats() {
     document.getElementById("oS_AttackBar").innerHTML = Math.floor(S_Attack);
     document.getElementById("oS_DefenseBar").innerHTML = Math.floor(S_Defense);
     document.getElementById("oSpeedBar").innerHTML = Math.floor(Speed);
+
+    changeColors("o");
+}
+
+function changeColors(who) {
+    var div1 = document.getElementById(who + "Input");
+    var div2 = document.getElementById(who + "Stats");
+    var type1 = document.getElementById(who + "StatT1").innerHTML;
+    var type2 = document.getElementById(who + "StatT2").innerHTML;
+    var color1 = getColor(type1);
+    var color2;
+    if (type2 != "")
+        color2 = getColor(type2);
+    else
+        color2 = color1;
+    div1.style.backgroundColor = color1;
+    div2.style.backgroundColor = color2;
+}
+
+function getColor(type) {
+    var color;
+    switch(type) {
+        case 'normal': color = "#A8A878"
+        break;
+        case 'fighting': color = "#C03028"
+        break;
+        case 'flying': color = "#A890F0"
+        break;
+        case 'poison': color = "#A040A0"
+        break;
+        case 'ground': color = "#E0C068"
+        break;
+        case 'rock': color = "#B8A038"
+        break;
+        case 'bug': color = "#A8B820"
+        break;
+        case 'ghost': color = "#705898"
+        break;
+        case 'steel': color = "#B8B8D0"
+        break;
+        case 'fire': color = "#F08030"
+        break;
+        case 'water': color = "#6890F0"
+        break;
+        case 'grass': color = "#78C850"
+        break;
+        case 'electric': color = "#F8D030"
+        break;
+        case 'psychic': color = "#F85888"
+        break;
+        case 'ice': color = "#98D8D8"
+        break;
+        case 'dragon': color = "#7038F8"
+        break;
+        case 'dark': color = "#705848"
+        break;
+        case 'fairy': color = "#EE99AC"
+        break;
+    }
+    return color;
 }
 
 function popMoves() {
@@ -236,9 +298,10 @@ function popMoves() {
 }
 
 function calcDamage() {
+    var type = yMove.type.name;
+    var typeColor = getColor(type);
     var power = yMove.power;
     var accuracy = yMove.accuracy;
-    var type = yMove.type.name;
     var dType1 = oPoke.types[0].type.name;
     var dType2;
     if (oPoke.types[1] == undefined) {
@@ -285,6 +348,8 @@ function calcDamage() {
     }
     document.getElementById("totalDamage").innerHTML = Math.floor(tDamage);
     document.getElementById("KO").innerHTML = Math.ceil(parseInt(document.getElementById("oHPBar").innerHTML) / tDamage);
+    document.getElementById("moveAndFactors").style.backgroundColor = typeColor;
+    document.getElementById("outcome").style.backgroundColor = typeColor;
 }
 
 function calcType(dType1, dType2) {
