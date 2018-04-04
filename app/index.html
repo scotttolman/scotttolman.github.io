@@ -26,8 +26,7 @@
         <table>
             <tr>
                 <th><label for="yLevel">Level</label></th>
-                <td><input type="number" name="yLevel" id="yLevel" min="1" max="100" value="1" 
-                    onchange="valInput(yLevel.value, 1, 100, 'y')"></td>
+                <td><input type="number" name="yLevel" id="yLevel" min="1" max="100" value="1" class="levels"></td>
                 <th id="yLvlErr"></th>
             </tr>
             <tr class="yAdv">
@@ -38,33 +37,33 @@
             </tr>
             <tr class="yAdv">
                 <th>HP</th>
-                <td><input type="number" name="yHPEV" id="yHPEV" min="0" max="252" value="0"></td>
-                <td><input type="number" name="yHPIV" id="yHPIV" min="0" max="31" value="15"></td>
+                <td><input type="number" class="ev" name="yHPEV" id="yHPEV" min="0" max="252" value="0"></td>
+                <td><input type="number" class="iv" name="yHPIV" id="yHPIV" min="0" max="31" value="15"></td>
             </tr>
             <tr class="yAdv">
                 <th>Attack</th>
-                <td><input type="number" name="yAttackEV" id="yAttackEV" min="0" max="252" value="0"></td>
-                <td><input type="number" name="yAttackIV" id="yAttackIV" min="0" max="31" value="15"></td>
+                <td><input type="number" class="ev" name="yAttackEV" id="yAttackEV" min="0" max="252" value="0"></td>
+                <td><input type="number" class="iv" name="yAttackIV" id="yAttackIV" min="0" max="31" value="15"></td>
             </tr>
             <tr class="yAdv">
                 <th>Defense</th>
-                <td><input type="number" name="yDefenseEV" id="yDefenseEV" min="0" max="252" value="0"></td>
-                <td><input type="number" name="yDefenseIV" id="yDefenseIV" min="0" max="31" value="15"></td>
+                <td><input type="number" class="ev" name="yDefenseEV" id="yDefenseEV" min="0" max="252" value="0"></td>
+                <td><input type="number" class="iv" name="yDefenseIV" id="yDefenseIV" min="0" max="31" value="15"></td>
             </tr>
             <tr class="yAdv">
                 <th>Sp. Attack</th>
-                <td><input type="number" name="yS_AttackEV" id="yS_AttackEV" min="0" max="252" value="0"></td>
-                <td><input type="number" name="yS_AttackIV" id="yS_AttackIV" min="0" max="31" value="15"></td>
+                <td><input type="number" class="ev" name="yS_AttackEV" id="yS_AttackEV" min="0" max="252" value="0"></td>
+                <td><input type="number" class="iv" name="yS_AttackIV" id="yS_AttackIV" min="0" max="31" value="15"></td>
             </tr>
             <tr class="yAdv">
                 <th>Sp. Defense</th>
-                <td><input type="number" name="yS_DefenseEV" id="yS_DefenseEV" min="0" max="252" value="0"></td>
-                <td><input type="number" name="yS_DefenseIV" id="yS_DefenseIV" min="0" max="31" value="15"></td>
+                <td><input type="number" class="ev" name="yS_DefenseEV" id="yS_DefenseEV" min="0" max="252" value="0"></td>
+                <td><input type="number" class="iv" name="yS_DefenseIV" id="yS_DefenseIV" min="0" max="31" value="15"></td>
             </tr>
             <tr class="yAdv">
                 <th>Speed</th>
-                <td><input type="number" name="ySpeedEV" id="ySpeedEV" min="0" max="252" value="0"></td>
-                <td><input type="number" name="ySpeedIV" id="ySpeedIV" min="0" max="31" value="15"></td>
+                <td><input type="number" class="ev" name="ySpeedEV" id="ySpeedEV" min="0" max="252" value="0"></td>
+                <td><input type="number" class="iv" name="ySpeedIV" id="ySpeedIV" min="0" max="31" value="15"></td>
             </tr>
         </table>
         <br>
@@ -142,8 +141,7 @@
         <table>
             <tr>
                 <th><label for="oLevel">Level</label></th>
-                <td><input type="number" name="oLevel" id="oLevel" min="1" max="100" value="1" 
-                    onchange="valInput(oLevel.value, 1, 100, 'o')"></td>
+                <td><input type="number" name="oLevel" id="oLevel" min="1" max="100" value="1" class="levels"></td>
                 <th id="oLvlErr"></th>
             </tr>
             <tr class="oAdv">
@@ -153,33 +151,33 @@
             </tr>
             <tr class="oAdv">
                 <th>HP</th>
-                <td><input type="number" name="oHPEV" id="oHPEV" min="0" max="252" value="0"></td>
-                <td><input type="number" name="oHPIV" id="oHPIV" min="0" max="31" value="15"></td>
+                <td><input type="number" class="ev" name="oHPEV" id="oHPEV" min="0" max="252" value="0"></td>
+                <td><input type="number" class="iv" name="oHPIV" id="oHPIV" min="0" max="31" value="15"></td>
             </tr>
             <tr class="oAdv">
                 <th>Attack</th>
-                <td><input type="number" name="oAttackEV" id="oAttackEV" min="0" max="252" value="0"></td>
-                <td><input type="number" name="oAttackIV" id="oAttackIV" min="0" max="31" value="15"></td>
+                <td><input type="number" class="ev" name="oAttackEV" id="oAttackEV" min="0" max="252" value="0"></td>
+                <td><input type="number" class="iv" name="oAttackIV" id="oAttackIV" min="0" max="31" value="15"></td>
             </tr>
             <tr class="oAdv">
                 <th>Defense</th>
-                <td><input type="number" name="oDefenseEV" id="oDefenseEV" min="0" max="252" value="0"></td>
-                <td><input type="number" name="oDefenseIV" id="oDefenseIV" min="0" max="31" value="15"></td>
+                <td><input type="number" class="ev" name="oDefenseEV" id="oDefenseEV" min="0" max="252" value="0"></td>
+                <td><input type="number" class="iv" name="oDefenseIV" id="oDefenseIV" min="0" max="31" value="15"></td>
             </tr>
             <tr class="oAdv">
                 <th>Sp. Attack</th>
-                <td><input type="number" name="oS_AttackEV" id="oS_AttackEV" min="0" max="252" value="0"></td>
-                <td><input type="number" name="oS_AttackIV" id="oS_AttackIV" min="0" max="31" value="15"></td>
+                <td><input type="number" class="ev" name="oS_AttackEV" id="oS_AttackEV" min="0" max="252" value="0"></td>
+                <td><input type="number" class="iv" name="oS_AttackIV" id="oS_AttackIV" min="0" max="31" value="15"></td>
             </tr>
             <tr class="oAdv">
                 <th>Sp. Defense</th>
-                <td><input type="number" name="oS_DefenseEV" id="oS_DefenseEV" min="0" max="252" value="0"></td>
-                <td><input type="number" name="oS_DefenseIV" id="oS_DefenseIV" min="0" max="31" value="15"></td>
+                <td><input type="number" class="ev" name="oS_DefenseEV" id="oS_DefenseEV" min="0" max="252" value="0"></td>
+                <td><input type="number" class="iv" name="oS_DefenseIV" id="oS_DefenseIV" min="0" max="31" value="15"></td>
             </tr>
             <tr class="oAdv">
                 <th>Speed</th>
-                <td><input type="number" name="oSpeedEV" id="oSpeedEV" min="0" max="252" value="0"></td>
-                <td><input type="number" name="oSpeedIV" id="oSpeedIV" min="0" max="31" value="15"></td>
+                <td><input type="number" class="ev" name="oSpeedEV" id="oSpeedEV" min="0" max="252" value="0"></td>
+                <td><input type="number" class="iv" name="oSpeedIV" id="oSpeedIV" min="0" max="31" value="15"></td>
             </tr>
         </table>
         <br>

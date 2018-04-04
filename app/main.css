@@ -25,12 +25,6 @@
     transition: 500ms;
 }
 
-#yAdv {
-    display: none;
-    overflow: hidden;
-    transition: 500ms;
-}
-
 .oAdv {
     display: none;
 }

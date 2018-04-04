@@ -48,7 +48,38 @@ function oExpand() {
     }
 }
 
+function inputValidate() {
+    var levels = document.getElementsByClassName("levels");
+    var evs = document.getElementsByClassName("ev");
+    var ivs = document.getElementsByClassName("iv");
+    for (var i = 0; i < levels.length; i++) {
+        if (levels[i].value < 1){
+            levels[i].value = 1;
+        }
+        else if (levels[i].value > 100) {
+            levels[i].value = 100;
+        }
+    }
+    for (var i = 0; i < evs.length; i++) {
+        if (evs[i].value < 0){
+            evs[i].value = 0;
+        }
+        else if (evs[i].value > 252) {
+            evs[i].value = 252;
+        }
+    }
+    for (var i = 0; i < ivs.length; i++) {
+        if (ivs[i].value < 0){
+            ivs[i].value = 0;
+        }
+        else if (ivs[i].value > 31) {
+            ivs[i].value = 31;
+        }
+    }
+}
+
 function getData(url, code) {
+    inputValidate();
     if (code == 1) {
         document.getElementById("yBall").style.display = "block";
         document.getElementById("yStats").style.display = "block"
@@ -422,16 +453,5 @@ function checkStab(type) {
     }
     else {
         return 1;
-    }
-}
-
-function valInput(val, min, max, callerID) {
-    if (val >= min && val <= max) {
-        document.getElementById(callerID + "Data").readOnly = false;
-        document.getElementById(callerID + "LvlErr").innerHTML = "";
-    }
-    else {
-        document.getElementById(callerID).readOnly = true;
-        document.getElementById(callerID + "LvlErr").innerHTML = "1-100";
     }
 }
