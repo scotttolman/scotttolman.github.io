@@ -20,13 +20,15 @@
                 <td><input type="text" name="yourPokemon" id="yourPokemon" size="9em"></td>
             </tr>
             <tr>
-                <td></td>
-                <th id="yPNameErr"></th>
-                <td></td>
+                <td id="yPNameErr" colspan="2"></td>
             </tr>
+        </table>
+        <table>
             <tr>
                 <th><label for="yLevel">Level</label></th>
-                <td><input type="number" name="yLevel" id="yLevel" min="1" max="100" value="1"></td>
+                <td><input type="number" name="yLevel" id="yLevel" min="1" max="100" value="1" 
+                    onchange="valInput(yLevel.value, 1, 100, 'y')"></td>
+                <th id="yLvlErr"></th>
             </tr>
             <tr class="yAdv">
                 <td></td>
@@ -64,12 +66,12 @@
                 <td><input type="number" name="ySpeedEV" id="ySpeedEV" min="0" max="252" value="0"></td>
                 <td><input type="number" name="ySpeedIV" id="ySpeedIV" min="0" max="31" value="15"></td>
             </tr>
-            <tr>
-                <th><button id="yData" onclick="getData('https://pokeapi.co/api/v2/pokemon/' + yourPokemon.value.toLowerCase() + '/', 1)">Get Data</button></th>
-                <td><img src="pokeball.png" alt="pokeball" id="yBall"></td>
-            </tr>
         </table>
-        <br><br>
+        <br>
+        <button id="yData" onclick="getData('https://pokeapi.co/api/v2/pokemon/' + yourPokemon.value.toLowerCase() + '/', 1)">Get Data</button>
+        <br>
+        <img src="pokeball.png" alt="pokeball" id="yBall">
+        <br>
         <div class="advOpt" id="yAdvOpt">
             <span id="yAdvOptTxt">&#9660&#9660Advanced Options&#9660&#9660</span>
         </div>
@@ -130,9 +132,13 @@
                 <th id="oPNameErr"></th>
                 <td></td>
             </tr>
+        </table>
+        <table>
             <tr>
                 <th><label for="oLevel">Level</label></th>
-                <td><input type="number" name="oLevel" id="oLevel" min="1" max="100" value="1"></td>
+                <td><input type="number" name="oLevel" id="oLevel" min="1" max="100" value="1" 
+                    onchange="valInput(oLevel.value, 1, 100, 'o')"></td>
+                <th id="oLvlErr"></th>
             </tr>
             <tr class="oAdv">
                 <td></td>
@@ -169,12 +175,12 @@
                 <td><input type="number" name="oSpeedEV" id="oSpeedEV" min="0" max="252" value="0"></td>
                 <td><input type="number" name="oSpeedIV" id="oSpeedIV" min="0" max="31" value="15"></td>
             </tr>
-            <tr>
-                <th><button id="oData" onclick="getData('https://pokeapi.co/api/v2/pokemon/' + oppPokemon.value + '/', 2)">Get Data</button></th>
-                <td><img src="pokeball.png" alt="pokeball" id="oBall"></td>
-            </tr>
         </table>
-        <br><br>
+        <br>
+            <button id="oData" onclick="getData('https://pokeapi.co/api/v2/pokemon/' + oppPokemon.value.toLowerCase() + '/', 2)">Get Data</button>
+            <br>
+            <img src="pokeball.png" alt="pokeball" id="oBall">
+        <br>
         <div class="advOpt" id="oAdvOpt">
             <span id="oAdvOptTxt">&#9660&#9660Advanced Options&#9660&#9660</span>
         </div>
@@ -243,11 +249,12 @@
                 </td>
                 <td><span id="critChance">0</span>% Chance</td>
             </tr>
-            <tr>
-                <td></td>
-                <th><button id="moveData" onclick="getData(moves.value, 3)">Calculate Damage</button></th>
-            </tr>
         </table>
+        <br>
+        <button id="moveData" onclick="getData(moves.value, 3)">Calc Damage</button>
+        <br>
+        <img src="pokeball.png" alt="pokeball" id="dBall">
+        <br>
     </div>
     <br>
     <!--*********************** OUTCOME *************************-->
@@ -255,13 +262,33 @@
         <h3>Damage Outcome</h3>
         <table>
             <tr>
+                <th>Move Type</th>
+                <td id="moveType"></td>
+            </tr>
+            <tr>
+                <th>Accuracy</th>
+                <td id="accuracy"></td>
+            </tr>
+            <tr>
+                <th>Power</th>
+                <td id="power"></td>
+            </tr>
+            <tr>
                 <th>Base Damage</th>
                 <td id="baseDamage"></td>
             </tr>
             <tr>
                 <th>Critical</th>
                 <td>x<span id="critMult">1</span></td>
-                <td><span id="tCrit">0</span>% Chance</td>
+            </tr>
+            <tr>
+                <th>STAB</th>
+                <td>x<span id="STABMult">1</span></td>
+            </tr>
+            <tr>
+                <th>Type Effect</th>
+                <td>x<span id="typeMult">1</span></td>
+                <td><span id="tType">normal</span></td>
             </tr>
             <tr>
                 <th><strong><hr></strong></th>

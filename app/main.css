@@ -32,7 +32,7 @@
     display: none;
 }
 
-#yPNameErr, #oPNameErr {
+#yPNameErr, #oPNameErr, #oLvlErr, #yLvlErr {
     color: red;
 }
 
@@ -44,22 +44,30 @@
     display: none;
 }
 
-td, input, button {
+td, input, button, select {
     font-size: 1.2em;
 }
 
 th{
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
-#yBall, #oBall {
+#yBall, #oBall, #dBall{
     height: 35px;
     width: 35px;
     animation: spin 2s linear infinite;
     display: none;
+    margin: auto;
 }
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+button{
+    display: block;
+    margin: auto;
+    width: 80%;
+    height: 2em;
 }

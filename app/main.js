@@ -50,10 +50,13 @@ function oExpand() {
 
 function getData(url, code) {
     if (code == 1) {
-        document.getElementById("yBall").style.display = "inline";
+        document.getElementById("yBall").style.display = "block";
     }
     if (code == 2) {
-        document.getElementById("oBall").style.display = "inline";
+        document.getElementById("oBall").style.display = "block";
+    }
+    if (code == 3) {
+        document.getElementById("dBall").style.display = "block";
     }
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
@@ -91,6 +94,12 @@ function getData(url, code) {
                 case 2:
                     document.getElementById("oPNameErr").innerHTML = "Pokemon not found"
                     document.getElementById("oBall").style.display = "none";
+                    break;
+                case 3:
+                    document.getElementById("dBall").style.display = "none";
+                    break;
+                case 4:
+                    document.getElementById("dBall").style.display = "none";
                     break;
             }
         }
@@ -230,38 +239,112 @@ function calcDamage() {
     var power = yMove.power;
     var accuracy = yMove.accuracy;
     var type = yMove.type.name;
+    var dType1 = oPoke.types[0].type.name;
+    var dType2;
+    if (oPoke.types[1] == undefined) {
+        dType2 = null;
+    }
+    else {
+        dType2 = oPoke.types[1].type.name;
+    }
     var lvl = parseInt(document.getElementById("yLevel").value);
     var atk = parseInt(document.getElementById("yAttackBar").innerHTML);
     var def = parseInt(document.getElementById("oDefenseBar").innerHTML);
     var bDamage = ((((((2 * lvl) / 5) + 2) * power * atk / def) / 50) + 2);
     var tDamage = bDamage;
-    tDamage *= calcType(type);
+    var STAB = checkStab(type);
+    tDamage *= STAB;
+    var typeEffect = calcType(dType1, dType2);
+    tDamage *= typeEffect;
+
+    document.getElementById("dBall").style.display = "none";
+    document.getElementById("moveType").innerHTML = type;
+    document.getElementById("accuracy").innerHTML = accuracy;
+    document.getElementById("power").innerHTML = power;
+    document.getElementById("baseDamage").innerHTML = Math.floor(bDamage);
     if (document.getElementById("critical").value == "Yes") {
         tDamage *= 2;
-        document.getElementById("critMult").innerHTML = 2;
-        document.getElementById("tCrit").innerHTML = ((yPoke.stats[0].base_stat / 512) * 100).toFixed(2);                            
+        document.getElementById("critMult").innerHTML = 2;                         
     }
-    document.getElementById("baseDamage").innerHTML = Math.floor(bDamage);
+    else {
+        document.getElementById("critMult").innerHTML = 1; 
+    }
+    document.getElementById("STABMult").innerHTML = STAB;
+    document.getElementById("typeMult").innerHTML = typeEffect;
+    if (typeEffect == 0) {
+        document.getElementById("tType").innerHTML = "Ineffective"
+    }
+    else if (typeEffect < 1) {
+        document.getElementById("tType").innerHTML = "Not very Effective"
+    }
+    else if (typeEffect == 1) {
+        document.getElementById("tType").innerHTML = "Normal Effect"
+    }
+    else if (typeEffect > 1) {
+        document.getElementById("tType").innerHTML = "Super Effective"
+    }
     document.getElementById("totalDamage").innerHTML = Math.floor(tDamage);
     document.getElementById("KO").innerHTML = Math.ceil(parseInt(document.getElementById("oHPBar").innerHTML) / tDamage);
 }
 
-function calcType(type) {
+function calcType(dType1, dType2) {
+    var f1 = 1;
+    var f2 = 1;
     var mult = mType.damage_relations;
-    for (var i = 0; i < mult.no_damage_to; i++) {
-        if (mult.no_damage_to[i].name == type) {
-            return 0;
+    for (var i = 0; i < mult.no_damage_to.length; i++) {
+        if (mult.no_damage_to[i].name == dType1) {
+            f1 = 0;
         }
     }
-    for (var i = 0; i < mult.half_damage_to; i++) {
-        if (mult.half_damage_to[i].name == type) {
-            return 0.5;
+    for (var i = 0; i < mult.half_damage_to.length; i++) {
+        if (mult.half_damage_to[i].name == dType1) {
+            f1 = 0.5;
         }
     }
-    for (var i = 0; i < mult.double_damage_to; i++) {
-        if (mult.double_damage_to[i].name == type) {
-            return 2;
+    for (var i = 0; i < mult.double_damage_to.length; i++) {
+        if (mult.double_damage_to[i].name == dType1) {
+            f1 = 2;
         }
     }
-    return 1;
+    if (dType2 != null) {
+        for (var i = 0; i < mult.no_damage_to.length; i++) {
+            if (mult.no_damage_to[i].name == dType2) {
+                f2 = 0;
+            }
+        }
+        for (var i = 0; i < mult.half_damage_to.length; i++) {
+            if (mult.half_damage_to[i].name == dType2) {
+                f2 = 0.5;
+            }
+        }
+        for (var i = 0; i < mult.double_damage_to.length; i++) {
+            if (mult.double_damage_to[i].name == dType2) {
+                f2 = 2;
+            }
+        }
+        return f1 * f2;
+    }
+    return f1;
+}
+
+function checkStab(type) {
+    var t1 = document.getElementById("yStatT1").innerHTML;
+    var t2 = document.getElementById("yStatT2").innerHTML;
+    if (type == t1 || type == t2) {
+        return 1.5;
+    }
+    else {
+        return 1;
+    }
+}
+
+function valInput(val, min, max, callerID) {
+    if (val >= min && val <= max) {
+        document.getElementById(callerID + "Data").readOnly = false;
+        document.getElementById(callerID + "LvlErr").innerHTML = "";
+    }
+    else {
+        document.getElementById(callerID).readOnly = true;
+        document.getElementById(callerID + "LvlErr").innerHTML = "1-100";
+    }
 }
