@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="browse.js"></script>
+    <link rel="stylesheet" href="browse.css" type="text/css">
+    <title>Browse The Catalog</title>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="left-pane">
+            <div id="criteria" class="">
+                <div id="logo-div">
+                    <img src="ldxr_logo.png" alt="Logo" href="browse.html" onclick="home()" style="width: 100%; height: 100%">
+                </div>
+                <div id="audience">
+                    <div class="crit-head">
+                        <hr>
+                        <h3>Audience</h3>
+                    </div>
+                    <hr>
+                    <div class="crit-bod">
+                        <button id="all-audience" onclick="selectAllAudience()">Select All</button>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="toddler" id="toddler">
+                        <label for="toddler">Toddler</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="early-readers" id="early-readers">
+                        <label for="early-readers">Early Readers</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="juvenile-t" id="juvenile-t">
+                        <label for="juvenile-t">Juvenile Transition</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="juvenile" id="juvenile">
+                        <label for="juvenile">Juvenile</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="young-adult" id="young-adult">
+                        <label for="young-adult">Young Adult</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="adult" id="adult">
+                        <label for="adult">Adult</label>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+                <div id="genre">
+                    <div class="crit-head">
+                        <hr>
+                        <h3>Genre</h3>
+                        <hr>
+                    </div>
+                    <div class="crit-bod">
+                        <button id="all-genre" onclick="selectAllGenre()">Select All</button>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="horror" id="horror">
+                        <label for="horror">Horror</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="mystery" id="mystery">
+                        <label for="mystery">Mystery</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="romance" id="romance">
+                        <label for="romance">Romance</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="science-fiction" id="science-fiction">
+                        <label for="science-fiction">Science Fiction</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="thriller" id="thriller">
+                        <label for="thriller">Thriller</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="classic" id="classic">
+                        <label for="classic">Classic</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="fairy-tales" id="fairy-tales">
+                        <label for="fairy-tales">Fairy Tales</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="biographies" id="biographies">
+                        <label for="biographies">Biographies</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="health" id="health">
+                        <label for="health">Health</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="inspirational" id="inspirational">
+                        <label for="inspirational">Inspirational</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="self-help" id="self-help">
+                        <label for="self-help">self-Help</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="history" id="history">
+                        <label for="history">History</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="religion" id="religion">
+                        <label for="religion">Religion</label>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-pane">
+            <div id="sorting">
+                <div id="num-results-div">
+                    <p id="num-results">10 Results</p>
+                </div>
+                <div id="sort-by-div">
+                    <label for="sort-by">Sort by</label>
+                    <select name="sort-by" id="sort-by" onchange="sortBy()">
+                        <option value="popularity">Popularity</option>
+                        <option value="trending">Trending</option>
+                        <option value="pagesHL">Pages High to Low</option>
+                        <option value="pagesLH">Pages Low to High</option>
+                        <option value="levelHL">Reading Level High to Low</option>
+                        <option value="levelLH">Reading Level Low to High</option>
+                        <option value="rated">Highest Rated</option>
+                    </select>
+                </div>
+            </div>
+            <div id="results">
+                <hr>
+                <img src="toddler 1.png" alt="toddler 1">
+                <hr>
+                <img src="toddler 2.png" alt="toddler 2">
+                <hr>
+                <img src="toddler 3.png" alt="toddler 3">
+                <hr>
+                <img src="toddler 4.png" alt="toddler 4">
+                <hr>
+                <img src="toddler 5.png" alt="toddler 5">
+                <hr>
+                <img src="toddler 6.png" alt="toddler 6">
+                <hr>
+                <img src="toddler 7.png" alt="toddler 7">
+                <hr>
+                <img src="toddler 8.png" alt="toddler 8">
+                <hr>
+                <img src="toddler 9.png" alt="toddler 9">
+                <hr>
+                <img src="toddler 10.png" alt="toddler 10">
+                <hr>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
