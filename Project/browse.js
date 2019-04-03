@@ -102,175 +102,127 @@ function getResults() {
             }
         }
     }
+    results = removeDuplicates(results);
     results = sortResults(results);
     return results;
 }
 
-function sortResults(results) {
+function removeDuplicates(results) {
+    for (let i = results.length - 1; i >= 0; i--) {
+        if (results[i] === results[i + 1]) {
+            results.splice(i + 1, 1);
+        }
+    }
+    return results;
+}
 
+function sortResults(results) {
+    let sortOpt = document.getElementById("sort-by").selectedIndex;
+    switch (sortOpt) {
+        //popularity: list defaults to this
+        case 0:
+            break;
+        //pagesHL
+        case 1:
+            results.sort((a,b) => {return b.pp - a.pp})
+            break;
+        //pagesLH
+        case 2:
+            results.sort((a,b) => {return a.pp - b.pp})
+            break;
+        //RL HL
+        case 3:
+            results.sort((a,b) => {return b.level - a.level})
+            break;
+        //RL LH
+        case 4:
+            results.sort((a,b) => {return a.level - b.level})
+            break;
+    }
     return results;
 }
 
 const r = {
-    "result": [{
-            "file": "c1",
-            "cat": "c",
-            "pp": 0,
-            "level": 0,
-            "genre": "c",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/3302530?detail_record_view=1;fi%3Aaudience=a;fi%3Aaudience=b;locg=137;pubdate=is;expand=awards"
-        },
+    "result": [
         {
-            "file": "c2",
-            "cat": "c",
-            "pp": 0,
-            "level": 0,
-            "genre": "c",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/3390443?detail_record_view=1;fi%3Aaudience=a;fi%3Aaudience=b;locg=137;pubdate=is;expand=awards"
-        },
-        {
-            "file": "c3",
-            "cat": "c",
-            "pp": 0,
-            "level": 0,
-            "genre": "c",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/3299669?detail_record_view=1;fi%3Aaudience=a;fi%3Aaudience=b;locg=137;pubdate=is;expand=awards"
-        },
-        {
-            "file": "c4",
-            "cat": "c",
-            "pp": 0,
-            "level": 0,
-            "genre": "c",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/3301565?detail_record_view=1;fi%3Aaudience=a;fi%3Aaudience=b;locg=137;pubdate=is;expand=awards"
-        },
-        {
-            "file": "c5",
-            "cat": "c",
-            "pp": 0,
-            "level": 0,
-            "genre": "c",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/3397206?detail_record_view=1;fi%3Aaudience=a;fi%3Aaudience=b;locg=137;pubdate=is;expand=awards"
-        },
-        {
-            "file": "c6",
-            "cat": "c",
-            "pp": 0,
-            "level": 0,
-            "genre": "c",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/3297032?detail_record_view=1;fi%3Aaudience=a;fi%3Aaudience=b;locg=137;pubdate=is;expand=awards"
-        },
-        {
-            "file": "c7",
-            "cat": "c",
-            "pp": 0,
-            "level": 0,
-            "genre": "c",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/3396482?detail_record_view=1;fi%3Aaudience=a;fi%3Aaudience=b;locg=137;pubdate=is;expand=awards"
-        },
-        {
-            "file": "c8",
-            "cat": "c",
-            "pp": 0,
-            "level": 0,
-            "genre": "c",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/3398333?detail_record_view=1;fi%3Aaudience=a;fi%3Aaudience=b;locg=137;pubdate=is;expand=awards"
-        },
-        {
-            "file": "c9",
-            "cat": "c",
-            "pp": 0,
-            "level": 0,
-            "genre": "c",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/3189908?detail_record_view=1;fi%3Aaudience=a;fi%3Aaudience=b;locg=137;pubdate=is;expand=awards"
-        },
-        {
-            "file": "c10",
-            "cat": "c",
-            "pp": 0,
-            "level": 0,
-            "genre": "c",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/3397196?detail_record_view=1;fi%3Aaudience=a;fi%3Aaudience=b;locg=137;pubdate=is;expand=awards"
-        },
-        {
-            "file": "j1",
-            "cat": "j",
-            "pp": 321,
-            "level": 1,
-            "genre": "f",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1927124?locg=137;detail_record_view=1;page=0;fi%3Aaudience=j;fi%3Aaudience=c;fi%3Aitem_type=a;sort=popularity;badges=1;expand=awards"
-        },
-        {
-            "file": "j2",
-            "cat": "j",
-            "pp": 212,
-            "level": 1,
+            "file": "a1",
+            "cat": "a",
+            "pp": 304,
+            "level": 3,
             "genre": "t",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1631249?locg=137;detail_record_view=1;page=0;fi%3Aaudience=j;fi%3Aaudience=c;fi%3Aitem_type=a;sort=popularity;badges=1;expand=awards"
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1974571?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=e;sort=poprel;badges=1;expand=awards"
         },
         {
-            "file": "j3",
-            "cat": "j",
-            "pp": 468,
-            "level": 690,
-            "genre": "f",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1924565?locg=137;detail_record_view=1;page=0;fi%3Aaudience=j;fi%3Aaudience=c;fi%3Aitem_type=a;sort=popularity;badges=1;expand=awards"
-        },
-        {
-            "file": "j4",
-            "cat": "j",
-            "pp": 376,
-            "level": 680,
-            "genre": "f",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1670466?locg=137;detail_record_view=1;page=0;fi%3Aaudience=j;fi%3Aaudience=c;fi%3Aitem_type=a;sort=popularity;badges=1;expand=awards"
-        },
-        {
-            "file": "j5",
-            "cat": "j",
-            "pp": 250,
-            "level": 1,
-            "genre": "t",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1918793?locg=137;detail_record_view=1;page=0;fi%3Aaudience=j;fi%3Aaudience=c;fi%3Aitem_type=a;sort=popularity;badges=1;expand=awards"
-        },
-        {
-            "file": "j6",
-            "cat": "j",
-            "pp": 266,
-            "level": 560,
-            "genre": "t",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1310343?locg=137;detail_record_view=1;page=0;fi%3Aaudience=j;fi%3Aaudience=c;fi%3Aitem_type=a;sort=popularity;badges=1;expand=awards"
-        },
-        {
-            "file": "j7",
-            "cat": "j",
-            "pp": 217,
-            "level": 1000,
-            "genre": "f",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1358778?locg=137;detail_record_view=1;page=0;fi%3Aaudience=j;fi%3Aaudience=c;fi%3Aitem_type=a;sort=popularity;badges=1;expand=awards"
-        },
-        {
-            "file": "j8",
-            "cat": "j",
-            "pp": 552,
-            "level": 840,
+            "file": "a2",
+            "cat": "a",
+            "pp": 276,
+            "level": 3,
             "genre": "r",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1165912?locg=137;detail_record_view=1;page=0;fi%3Aaudience=j;fi%3Aaudience=c;fi%3Aitem_type=a;sort=popularity;badges=1;expand=awards"
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/2162040?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=e;sort=poprel;badges=1;expand=awards"
         },
         {
-            "file": "j9",
-            "cat": "j",
-            "pp": 597,
-            "level": 680,
-            "genre": "f",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1158502?locg=137;detail_record_view=1;page=0;fi%3Aaudience=j;fi%3Aaudience=c;fi%3Aitem_type=a;sort=popularity;badges=1;expand=awards"
+            "file": "a3",
+            "cat": "a",
+            "pp": 446,
+            "level": 3,
+            "genre": "t",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1967711?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=e;sort=poprel;badges=1;expand=awards"
         },
         {
-            "file": "j10",
-            "cat": "j",
-            "pp": 315,
-            "level": 790,
-            "genre": "d",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1239078?locg=137;detail_record_view=1;page=0;fi%3Aaudience=j;fi%3Aaudience=c;fi%3Aitem_type=a;sort=popularity;badges=1;expand=awards"
+            "file": "a4",
+            "cat": "a",
+            "pp": 307,
+            "level": 3,
+            "genre": "r",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1976579?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=e;sort=poprel;badges=1;expand=awards"
+        },
+        {
+            "file": "a5",
+            "cat": "a",
+            "pp": 464,
+            "level": 3,
+            "genre": "t",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1967160?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=e;sort=poprel;badges=1;expand=awards"
+        },
+        {
+            "file": "a6",
+            "cat": "a",
+            "pp": 355,
+            "level": 3,
+            "genre": "t",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1967198?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=e;sort=poprel;badges=1;expand=awards"
+        },
+        {
+            "file": "a7",
+            "cat": "a",
+            "pp": 178,
+            "level": 3,
+            "genre": "h",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/2163897?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=e;sort=poprel;badges=1;expand=awards"
+        },
+        {
+            "file": "a8",
+            "cat": "a",
+            "pp": 355,
+            "level": 3,
+            "genre": "t",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1980222?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=e;sort=poprel;badges=1;expand=awards"
+        },
+        {
+            "file": "a9",
+            "cat": "a",
+            "pp": 392,
+            "level": 3,
+            "genre": "t",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/2163387?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=e;sort=poprel;badges=1;expand=awards"
+        },
+        {
+            "file": "a10",
+            "cat": "a",
+            "pp": 546,
+            "level": 3,
+            "genre": "t",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1980203?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=e;sort=poprel;badges=1;expand=awards"
         },
         {
             "file": "y1",
@@ -353,84 +305,164 @@ const r = {
             "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1255928?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=d;sort=poprel;badges=1;expand=awards"
         },
         {
-            "file": "a1",
-            "cat": "a",
-            "pp": 304,
-            "level": 3,
-            "genre": "t",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1974571?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=e;sort=poprel;badges=1;expand=awards"
+            "file": "j1",
+            "cat": "j",
+            "pp": 321,
+            "level": 1,
+            "genre": "f",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1927124?locg=137;detail_record_view=1;page=0;fi%3Aaudience=j;fi%3Aaudience=c;fi%3Aitem_type=a;sort=popularity;badges=1;expand=awards"
         },
         {
-            "file": "a2",
-            "cat": "a",
-            "pp": 276,
-            "level": 3,
+            "file": "j2",
+            "cat": "j",
+            "pp": 212,
+            "level": 1,
+            "genre": "t",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1631249?locg=137;detail_record_view=1;page=0;fi%3Aaudience=j;fi%3Aaudience=c;fi%3Aitem_type=a;sort=popularity;badges=1;expand=awards"
+        },
+        {
+            "file": "j3",
+            "cat": "j",
+            "pp": 468,
+            "level": 690,
+            "genre": "f",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1924565?locg=137;detail_record_view=1;page=0;fi%3Aaudience=j;fi%3Aaudience=c;fi%3Aitem_type=a;sort=popularity;badges=1;expand=awards"
+        },
+        {
+            "file": "j4",
+            "cat": "j",
+            "pp": 376,
+            "level": 680,
+            "genre": "f",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1670466?locg=137;detail_record_view=1;page=0;fi%3Aaudience=j;fi%3Aaudience=c;fi%3Aitem_type=a;sort=popularity;badges=1;expand=awards"
+        },
+        {
+            "file": "j5",
+            "cat": "j",
+            "pp": 250,
+            "level": 1,
+            "genre": "t",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1918793?locg=137;detail_record_view=1;page=0;fi%3Aaudience=j;fi%3Aaudience=c;fi%3Aitem_type=a;sort=popularity;badges=1;expand=awards"
+        },
+        {
+            "file": "j6",
+            "cat": "j",
+            "pp": 266,
+            "level": 560,
+            "genre": "t",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1310343?locg=137;detail_record_view=1;page=0;fi%3Aaudience=j;fi%3Aaudience=c;fi%3Aitem_type=a;sort=popularity;badges=1;expand=awards"
+        },
+        {
+            "file": "j7",
+            "cat": "j",
+            "pp": 217,
+            "level": 1000,
+            "genre": "f",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1358778?locg=137;detail_record_view=1;page=0;fi%3Aaudience=j;fi%3Aaudience=c;fi%3Aitem_type=a;sort=popularity;badges=1;expand=awards"
+        },
+        {
+            "file": "j8",
+            "cat": "j",
+            "pp": 552,
+            "level": 840,
             "genre": "r",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/2162040?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=e;sort=poprel;badges=1;expand=awards"
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1165912?locg=137;detail_record_view=1;page=0;fi%3Aaudience=j;fi%3Aaudience=c;fi%3Aitem_type=a;sort=popularity;badges=1;expand=awards"
         },
         {
-            "file": "a3",
-            "cat": "a",
-            "pp": 446,
-            "level": 3,
-            "genre": "t",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1967711?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=e;sort=poprel;badges=1;expand=awards"
+            "file": "j9",
+            "cat": "j",
+            "pp": 597,
+            "level": 680,
+            "genre": "f",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1158502?locg=137;detail_record_view=1;page=0;fi%3Aaudience=j;fi%3Aaudience=c;fi%3Aitem_type=a;sort=popularity;badges=1;expand=awards"
         },
         {
-            "file": "a4",
-            "cat": "a",
-            "pp": 307,
-            "level": 3,
-            "genre": "r",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1976579?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=e;sort=poprel;badges=1;expand=awards"
+            "file": "j10",
+            "cat": "j",
+            "pp": 315,
+            "level": 790,
+            "genre": "d",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1239078?locg=137;detail_record_view=1;page=0;fi%3Aaudience=j;fi%3Aaudience=c;fi%3Aitem_type=a;sort=popularity;badges=1;expand=awards"
         },
         {
-            "file": "a5",
-            "cat": "a",
-            "pp": 464,
-            "level": 3,
-            "genre": "t",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1967160?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=e;sort=poprel;badges=1;expand=awards"
+            "file": "c1",
+            "cat": "c",
+            "pp": 0,
+            "level": 0,
+            "genre": "c",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/3302530?detail_record_view=1;fi%3Aaudience=a;fi%3Aaudience=b;locg=137;pubdate=is;expand=awards"
         },
         {
-            "file": "a6",
-            "cat": "a",
-            "pp": 355,
-            "level": 3,
-            "genre": "t",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1967198?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=e;sort=poprel;badges=1;expand=awards"
+            "file": "c2",
+            "cat": "c",
+            "pp": 0,
+            "level": 0,
+            "genre": "c",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/3390443?detail_record_view=1;fi%3Aaudience=a;fi%3Aaudience=b;locg=137;pubdate=is;expand=awards"
         },
         {
-            "file": "a7",
-            "cat": "a",
-            "pp": 178,
-            "level": 3,
-            "genre": "h",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/2163897?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=e;sort=poprel;badges=1;expand=awards"
+            "file": "c3",
+            "cat": "c",
+            "pp": 0,
+            "level": 0,
+            "genre": "c",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/3299669?detail_record_view=1;fi%3Aaudience=a;fi%3Aaudience=b;locg=137;pubdate=is;expand=awards"
         },
         {
-            "file": "a8",
-            "cat": "a",
-            "pp": 355,
-            "level": 3,
-            "genre": "t",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1980222?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=e;sort=poprel;badges=1;expand=awards"
+            "file": "c4",
+            "cat": "c",
+            "pp": 0,
+            "level": 0,
+            "genre": "c",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/3301565?detail_record_view=1;fi%3Aaudience=a;fi%3Aaudience=b;locg=137;pubdate=is;expand=awards"
         },
         {
-            "file": "a9",
-            "cat": "a",
-            "pp": 392,
-            "level": 3,
-            "genre": "t",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/2163387?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=e;sort=poprel;badges=1;expand=awards"
+            "file": "c5",
+            "cat": "c",
+            "pp": 0,
+            "level": 0,
+            "genre": "c",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/3397206?detail_record_view=1;fi%3Aaudience=a;fi%3Aaudience=b;locg=137;pubdate=is;expand=awards"
         },
         {
-            "file": "a10",
-            "cat": "a",
-            "pp": 546,
-            "level": 3,
-            "genre": "t",
-            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/1980203?locg=137;detail_record_view=1;page=0;fi%3Aitem_type=a;fi%3Aaudience=e;sort=poprel;badges=1;expand=awards"
+            "file": "c6",
+            "cat": "c",
+            "pp": 0,
+            "level": 0,
+            "genre": "c",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/3297032?detail_record_view=1;fi%3Aaudience=a;fi%3Aaudience=b;locg=137;pubdate=is;expand=awards"
+        },
+        {
+            "file": "c7",
+            "cat": "c",
+            "pp": 0,
+            "level": 0,
+            "genre": "c",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/3396482?detail_record_view=1;fi%3Aaudience=a;fi%3Aaudience=b;locg=137;pubdate=is;expand=awards"
+        },
+        {
+            "file": "c8",
+            "cat": "c",
+            "pp": 0,
+            "level": 0,
+            "genre": "c",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/3398333?detail_record_view=1;fi%3Aaudience=a;fi%3Aaudience=b;locg=137;pubdate=is;expand=awards"
+        },
+        {
+            "file": "c9",
+            "cat": "c",
+            "pp": 0,
+            "level": 0,
+            "genre": "c",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/3189908?detail_record_view=1;fi%3Aaudience=a;fi%3Aaudience=b;locg=137;pubdate=is;expand=awards"
+        },
+        {
+            "file": "c10",
+            "cat": "c",
+            "pp": 0,
+            "level": 0,
+            "genre": "c",
+            "url": "https://little-dixie.missourievergreen.org/eg/opac/record/3397196?detail_record_view=1;fi%3Aaudience=a;fi%3Aaudience=b;locg=137;pubdate=is;expand=awards"
         },
         {
             "file": "bio1",
