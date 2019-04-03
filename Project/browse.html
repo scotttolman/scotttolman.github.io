@@ -10,7 +10,7 @@
     <title>Browse The Catalog</title>
 </head>
 
-<body>
+<body onload="orderResults()">
     <div class="grid-container">
         <div class="left-pane">
             <div id="criteria">
@@ -33,7 +33,7 @@
                         <label for="c">Children</label>
                         <br>
                         <br>
-                        <input type="checkbox" name="juvenile" id="j" onchange="orderResults()">
+                        <input type="checkbox" name="juvenile" id="j" onchange="orderResults()" checked>
                         <label for="j">Juvenile</label>
                         <br>
                         <br>
