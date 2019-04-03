@@ -79,7 +79,7 @@ function populateResults(results) {
         let image = document.createElement("img");
         let line = document.createElement("hr");
         link.setAttribute("href", results[i].url);
-        image.setAttribute("scr", "img/" + results[i].file + ".png");
+        image.setAttribute("src", "img/" + results[i].file + ".png");
         link.appendChild(image);
         parent.appendChild(link);
         parent.appendChild(line);
