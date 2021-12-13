@@ -1,0 +1,14 @@
+{
+  "You cannot upload as file size exceeded the allowed limit": "You cannot upload as file size exceeded the allowed limit {{size}} MB",
+  "The given file type is not supported by server": "The given file type is not supported by server",
+  "Ok": "Ok",
+  "Reload": "Reload",
+  "Oops... connectivity issue": "Oops... connectivity issue",
+  "Please check your network connection": "Please check your network connection",
+  "Invalid secret key": "Invalid secret key",
+  "The uploaded file type is not supported": "The uploaded file type is not supported",
+  "Chat with": "Chat with",
+  "Unable to establish connection. Please retry": "Unable to establish connection. Please retry",
+  "File upload is in progress, Please wait": "File upload is in progress, Please wait",
+  "Back to chat": "Back to chat"
+}

@@ -1,0 +1,189 @@
+/* You can add global styles to this file, and also import other style files */
+.luma-web-chat-main-container {
+  font-family: "Roboto", "sans-serif";
+}
+.luma-chat-container {
+  width: 460px !important;
+  right: 5px;
+  bottom: 119px;
+  height: 460px !important;
+}
+.luma-download-link,
+.luma-download-link:hover {
+  color: #2d2b24;
+  word-wrap: break-word;
+  display: block;
+  font-weight: 600;
+  color: #007bff;
+  word-wrap: break-word;
+  display: inline;
+}
+.luma-chat-toggle {
+  bottom: 25px;
+  right: 25px;
+  height: 80px;
+  width: 80px;
+  // background-image: url('botIcon.png');
+}
+.bot-icon {
+  background-image: url("botIcon.png");
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 35px;
+}
+.luma-chat-header-container {
+  background: #dc632a;
+  padding: 7px;
+}
+
+.luma-text-bot {
+  color: #181828;
+  background: #fff;
+  padding: 6px 10px 10px 10px;
+  font-size: 14px;
+  margin-right: 10px;
+  flex-shrink: 100;
+}
+.luma-text-user {
+  color: #fff;
+  background: #dc632a;
+  padding: 6px 10px 10px 10px;
+  display: flex;
+  font-size: 14px;
+  flex-direction: column;
+}
+.message-info-bot {
+  font-size: 10px;
+}
+.message-info-user {
+  font-size: 10px;
+  justify-content: flex-end;
+}
+
+.author-name {
+  max-width: 70px !important;
+}
+.bot-face-icon {
+  background-image: url("botHead.svg");
+  background-repeat: no-repeat;
+}
+.welcome-image {
+  background-image: url("service-aide-logo.png");
+}
+.agent-icon {
+  background-image: url("agent-icon.svg");
+  background-repeat: no-repeat;
+}
+// .welcome-container {
+// 	background-image: url('welcome-background.png');
+
+// }
+.broken-bot {
+  background-image: url("lostConnectionBot.svg");
+}
+
+.close-icon-small {
+  background-image: url("close-small.svg");
+  height: 20px;
+  width: 20px;
+}
+
+.minimize-icon-small {
+  background-image: url("minimize-small.svg");
+  height: 20px;
+  width: 20px;
+}
+
+.maximize-icon {
+  background-image: url("maximize.svg");
+  height: 20px;
+  width: 20px;
+}
+
+.minimize-icon {
+  background-image: url("minimize.svg");
+  height: 20px;
+  width: 20px;
+}
+
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  src: local("Material Icons"), local("MaterialIcons-Regular"),
+    url("assets/fonts/material/MaterialIcons-Regular.woff") format("woff");
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+/* montserrat-regular - latin */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("assets/fonts/montserrat/montserrat-v14-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local("Montserrat Regular"), local("Montserrat-Regular"),
+    url("assets/fonts/montserrat/montserrat-v14-latin-regular.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("assets/fonts/montserrat/montserrat-v14-latin-regular.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("assets/fonts/montserrat/montserrat-v14-latin-regular.woff") format("woff"),
+    /* Modern Browsers */ url("assets/fonts/montserrat/montserrat-v14-latin-regular.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("assets/fonts/montserrat/montserrat-v14-latin-regular.svg#Montserrat") format("svg"); /* Legacy iOS */
+}
+
+/* roboto-300 - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Roboto Light"), local("Roboto-Light"), url("assets/fonts/roboto/roboto-v20-latin-300.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-regular - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto"), local("Roboto-Regular"), url("assets/fonts/roboto/roboto-v20-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-500 - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Roboto Medium"), local("Roboto-Medium"), url("assets/fonts/roboto/roboto-v20-latin-500.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-700 - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Roboto Bold"), local("Roboto-Bold"), url("assets/fonts/roboto/roboto-v20-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-900 - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  src: local("Roboto Black"), local("Roboto-Black"), url("assets/fonts/roboto/roboto-v20-latin-900.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

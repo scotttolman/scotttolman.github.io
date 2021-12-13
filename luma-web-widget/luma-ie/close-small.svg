@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <defs>
+        <filter id="kanb25alza" width="104.4%" height="107.2%" x="-2.2%" y="-3.6%" filterUnits="objectBoundingBox">
+            <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="8"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g filter="url(#kanb25alza)" transform="translate(-1390 -30) translate(20 20)">
+                <g>
+                    <path d="M0 20L20 20 20 0 0 0z" transform="translate(1370 10)"/>
+                    <path stroke="#FFF" stroke-linecap="round" stroke-width="3" d="M3 10L17 10" transform="translate(1370 10) rotate(45 10 10)"/>
+                    <path stroke="#FFF" stroke-linecap="round" stroke-width="3" d="M3 10L17 10" transform="translate(1370 10) scale(1 -1) rotate(45 34.142 0)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

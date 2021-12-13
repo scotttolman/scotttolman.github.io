@@ -1,0 +1,12 @@
+{
+  "You cannot upload as file size exceeded the allowed limit": "ファイル サイズが許容制限 {{size}} MB を超えているためアップロードできません",
+  "The given file type is not supported by server": "指定したファイル タイプはサーバでサポートされていません",
+  "Ok": "OK",
+  "Reload": "リロード",
+  "Oops... connectivity issue": "接続の問題が発生しました",
+  "Please check your network connection": "ネットワーク接続を確認してください",
+  "Invalid secret key": "無効な秘密鍵",
+  "The uploaded file type is not supported": "アップロードしたファイル タイプはサポートされていません",
+  "Chat with": "次の相手とチャット:",
+  "Unable to establish connection. Please retry": "接続を確立できません。再試行してください"
+}

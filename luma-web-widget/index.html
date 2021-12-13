@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>VsaWebChatWidget</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="luma-web-widget.css" rel="stylesheet" type="text/css">
+  <style>
+  .luma-chat-toggle {
+    position: fixed;
+    background: #FFF;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06), 0 2px 32px rgba(0,0,0,0.16);
+    cursor: pointer;
+  }
+  </style>
+</head>
+
+<body>
+    <div id='botHere'></div>
+    <div class="luma-chat-toggle" onclick="toggleChatWidget()">
+      <i class="bot-icon"></i>
+    </div>
+    <script type="text/javascript" src="luma-web-widget.js"></script>
+    <script>
+      LumaBot({
+          botName: "LumaChatBot",
+          user: {
+            clientUserId: '7b2f312b-787f-11e9-be14-588a5a2e413f',
+            additionalProperties: {
+            }
+          },
+          secretkey: 'sOQfST/muHYPez+7XU1BnBLG3WQItXLLHS6fdsgDzlRQpJ5fkMmxhnJzBfle82mlngZ1a+eRcemIsg0E5tuoboqrYx+vluMHbyx0RMOhxJIBxdfm9gYXgU9xGSK20Hf7dOvWaTFw8ByONDy2DnUGEGkHeLvBDdAOSD086sB52IOhaTnGYBS8yMqfKQnzurO2/rkURAP6FXZQkira40fxz6YZBeyZB0ta7O0Bi//6VHM4EkL/kPK+8vEFAiE571v1M9NFAR7kLd3RY1FoIdaVEA==',
+          domain: "https://lumadevops2.serviceaide.com",
+          styleOptions: {
+            lumaChatContainer: {
+              width: '400px'
+            }
+          }
+        },
+        document.getElementById("botHere"));
+        function toggleChatWidget() {
+          LumaBot.toggleChatWidget();
+        }
+    </script>
+</body>
+
+</html>

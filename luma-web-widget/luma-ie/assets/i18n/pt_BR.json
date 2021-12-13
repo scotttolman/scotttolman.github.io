@@ -1,0 +1,14 @@
+{
+  "You cannot upload as file size exceeded the allowed limit": "Não é possível fazer upload, pois o tamanho do arquivo excede o limite permitido de {{size}} MB",
+  "The given file type is not supported by server": "O servidor não oferece suporte ao tipo de arquivo especificado",
+  "Ok": "OK",
+  "Reload": "Recarregar",
+  "Oops... connectivity issue": "Opa... problema de conectividade",
+  "Please check your network connection": "Verifique sua conexão de rede",
+  "Invalid secret key": "Chave secreta inválida",
+  "The uploaded file type is not supported": "O tipo de arquivo carregado não é suportado",
+  "Chat with": "Bater papo com",
+  "Unable to establish connection. Please retry": "Não é possível estabelecer conexão. Tente novamente",
+  "File upload is in progress, Please wait": "O upload do arquivo está em andamento; aguarde",
+  "Back to chat": "Voltar ao bate-papo"
+}
